@@ -15,7 +15,7 @@
     }
     div{
         box-sizing: border-box;
-       
+        padding: 0.3rem;     
     }
     h1{
         background: #938C97;
@@ -28,7 +28,7 @@
         float: right;
     }
     p{
-        padding: 3px;
+        padding: 0.8rem;
         margin: 0;
     }
     .clearfix{
@@ -38,16 +38,27 @@
     }
     .gender{
         float:right;
+        padding: 0.1rem;
+    }
+    .buttons{
+        padding: 3px;
+    }
+    .birth{
+        float: left;
     }
     .half{
         width: 50%;
     }
-    checkbox01{
-        float: left;
-    }
-    checkbox02{
-        float: right;
-    }
     .boxes{
         display: block;
+        padding: 5px;
+    }
+    .brands{
+        float: left;
+    }
+    .checkbox02{
+        float: right;
+    }
+    .checkbox01{
+        float: left;
     }
