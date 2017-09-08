@@ -7,18 +7,23 @@
     <title>Document</title>
     <style>
         *{
-    padding: 1em;
-    margin: 1rem;
+    padding: 0em;
+    margin: 0rem;
     box-sizing: border-box;
     background: #DCD6CD;
     }
     header{
         color: #4A4261;
+        width: 620px;
+        margin: 0 auto;
+    }
+    form{
+        width: 620px;
+        margin: 0 auto;
     }
     div{
         box-sizing: border-box;
-        padding: 0;
-        margin: 0;
+       
     }
     h1{
         background: #938C97;
@@ -39,6 +44,12 @@
         height: 0;
         clear: both;
     }
+    .gender{
+        float:right;
+    }
+    .half{
+        width: 50%;
+    }
     </style>
 </head>
 <body>
@@ -46,14 +57,21 @@
         Profil
     </header>
     <form>
-        <div class="personal">
+        <div class="personal half">
             <h1>Személyes Adatok</h1>
             <p>Név</p>
             <input type="text">
             <p>Születési dátum</p>
             <input type="date">
+            <span class="gender">
+                <p>Nemed</p>
+                <input type="radio" id="male" name="gender">
+                <label for="male">férfi</label>
+                <input type="radio" id="female" name="gender">
+                <label for="female">nő</label>
+            </span>            
         </div>
-        <div class="contact">
+        <div class="contact half">
             <h1>Kapcsolat</h1>
             <p>Telefonszám</p>
             <input type="telephone" placeholder="+36 -- --- ----">
