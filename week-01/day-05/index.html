@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link href="styles.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&amp;subset=latin-ext" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -17,8 +18,8 @@
             <p>Név</p>
             <input type="text">
             <span class="birth half">
-                <p>Születési dátum</p>
-                <input type="date">
+                <p>Születési év</p>
+                <input type="text" id="date" placeholder="Pl.:1988">
             </span>
             <span class="gender half">
                 <p>Nemed</p>
@@ -74,8 +75,9 @@
                             <input type="checkbox" id="xiaomi">           
                             <label for="xiaomi">Xiaomi</label>
                         </span>
-                    </span> 
-                </div>    
+                    </span>
+                    <p id="choice">Többet is választhatsz!</p> 
+                </div>   
         </div>
         <div class="contact half">
             <h1>Kapcsolat</h1>
@@ -87,16 +89,19 @@
             <input type="text" placeholder="http://facebook.com/...">
             <p>Twitter fiók</p>
             <input type="text" placeholder="http://twitter.com/...">
-            <p>Valami</p>
+            <p>Kivel szimpatizálsz?</p>
             <select>
-                <option></option>
-                <option></option>
-                <option></option>
-                <option></option>
+                <option value="">Válassz frakciót</option>
+                <option value="Lázadók szövetsége">Lázadók szövetsége</option>
+                <option value="Klingon Birodalom">Klingon Birodalom</option>
+                <option value="Griffendél ház">Griffendél ház</option>
+                <option value="Erdei Tündék">Erdei Tündék</option>
             </select>
         </div>
         <div class="clearfix">
             <p>Bemutatkozás</p>
+            <textarea class="introduce">
+            </textarea>
 
         </div>
     </form>
