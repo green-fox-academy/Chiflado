@@ -17,13 +17,28 @@
     }
     div{
         box-sizing: border-box;
-        float: left;
+        padding: 0;
+        margin: 0;
     }
     h1{
         background: #938C97;
         color: white;
     }
-
+    .personal{
+        float: left;
+    }
+    .contact{
+        float: right;
+    }
+    p{
+        padding: 3px;
+        margin: 0;
+    }
+    .clearfix{
+        width: 0;
+        height: 0;
+        clear: both;
+    }
     </style>
 </head>
 <body>
@@ -40,12 +55,25 @@
         </div>
         <div class="contact">
             <h1>Kapcsolat</h1>
+            <p>Telefonszám</p>
+            <input type="telephone" placeholder="+36 -- --- ----">
+            <p>E-mail</p>
+            <input type="email" placeholder="nev@domain.hu">
+            <p>Facebook profil</p>
+            <input type="text" placeholder="http://facebook.com/...">
+            <p>Twitter fiók</p>
+            <input type="text" placeholder="http://twitter.com/...">
+            <p>Valami</p>
+            <select>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+            </select>
         </div>
-        <div class="introduce">
-        </div>
-        <span>
+        <div class="clearfix">
             <p>Bemutatkozás</p>
-        </span>
+        </div>
     </form>
 </body>
 </html>
