@@ -42,3 +42,12 @@
     .half{
         width: 50%;
     }
+    checkbox01{
+        float: left;
+    }
+    checkbox02{
+        float: right;
+    }
+    .boxes{
+        display: block;
+    }
