@@ -5,52 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        *{
-    padding: 0em;
-    margin: 0rem;
-    box-sizing: border-box;
-    background: #DCD6CD;
-    }
-    header{
-        color: #4A4261;
-        width: 620px;
-        margin: 0 auto;
-    }
-    form{
-        width: 620px;
-        margin: 0 auto;
-    }
-    div{
-        box-sizing: border-box;
-       
-    }
-    h1{
-        background: #938C97;
-        color: white;
-    }
-    .personal{
-        float: left;
-    }
-    .contact{
-        float: right;
-    }
-    p{
-        padding: 3px;
-        margin: 0;
-    }
-    .clearfix{
-        width: 0;
-        height: 0;
-        clear: both;
-    }
-    .gender{
-        float:right;
-    }
-    .half{
-        width: 50%;
-    }
-    </style>
+    <link href="styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <header>
@@ -61,8 +16,10 @@
             <h1>Személyes Adatok</h1>
             <p>Név</p>
             <input type="text">
-            <p>Születési dátum</p>
-            <input type="date">
+            <span class="birth">
+                <p>Születési dátum</p>
+                <input type="date">
+            </span>
             <span class="gender">
                 <p>Nemed</p>
                 <input type="radio" id="male" name="gender">

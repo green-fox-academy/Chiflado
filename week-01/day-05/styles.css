@@ -1,0 +1,44 @@
+*{
+    padding: 0em;
+    margin: 0rem;
+    box-sizing: border-box;
+    background: #DCD6CD;
+    }
+    header{
+        color: #4A4261;
+        width: 620px;
+        margin: 0 auto;
+    }
+    form{
+        width: 620px;
+        margin: 0 auto;
+    }
+    div{
+        box-sizing: border-box;
+       
+    }
+    h1{
+        background: #938C97;
+        color: white;
+    }
+    .personal{
+        float: left;
+    }
+    .contact{
+        float: right;
+    }
+    p{
+        padding: 3px;
+        margin: 0;
+    }
+    .clearfix{
+        width: 0;
+        height: 0;
+        clear: both;
+    }
+    .gender{
+        float:right;
+    }
+    .half{
+        width: 50%;
+    }
