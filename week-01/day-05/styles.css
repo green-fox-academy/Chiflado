@@ -112,8 +112,8 @@
         display: inline-block;
     }
     .upload{
-        display: block;
+        width: 300px;
     }
     .terms{
-        display: inline;
+        width: 300px;
     }
