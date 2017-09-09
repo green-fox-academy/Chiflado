@@ -83,6 +83,7 @@
         width: 620px;
         height: 165px;
         background: white;
+        display: block;
     }
     input[type="text"], 
     input[type="email"], 
@@ -109,4 +110,10 @@
         color: #AFACA6;
         font-weight: 400;
         display: inline-block;
+    }
+    .upload{
+        display: block;
+    }
+    .terms{
+        display: inline;
     }
