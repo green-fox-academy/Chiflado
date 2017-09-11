@@ -8,3 +8,6 @@
 #  John Doe
 #  31
 #  1.87
+print('Balazs Prjevara')
+print(31)
+print(1.83)
