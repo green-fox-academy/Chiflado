@@ -11,3 +11,5 @@ if len(p2) > len(p1):
     print('p2 ha more elements than p1')
 elif len(p2) < len(p1):
     print('p1 ha more elements than p2')
+else:
+    print('p1 has the same number of element lik p2')
