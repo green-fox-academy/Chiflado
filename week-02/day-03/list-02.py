@@ -3,7 +3,13 @@
 
 girls = ["Eve", "Ashley", "Bözsi", "Kat", "Jane"]
 boys = ["Joe", "Fred", "Béla", "Todd", "Neef", "Jeff"]
-order = [a + "', '" + b for a, b in zip(girls, boys)]
 
+def matchmaking(x, y):
+    order = boys
+    a = 0
+    for i in (girls):
+        order.insert(a, i)
+        a += 2
+    return (order)
 
-print(order)
+print(matchmaking(girls, boys))
