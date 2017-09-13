@@ -3,6 +3,7 @@
 
 girls = ["Eve", "Ashley", "Bözsi", "Kat", "Jane"]
 boys = ["Joe", "Fred", "Béla", "Todd", "Neef", "Jeff"]
-order = [a + ", " + b for a, b in zip(girls, boys)]
+order = [a + "', '" + b for a, b in zip(girls, boys)]
+
 
 print(order)
