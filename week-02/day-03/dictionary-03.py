@@ -15,5 +15,3 @@ accounts = [
 #
 # Print "404 - account not found" if any of the account numbers don't exist
 
-
-
