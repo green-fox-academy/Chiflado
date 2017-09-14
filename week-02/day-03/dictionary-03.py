@@ -23,4 +23,18 @@ def account_balance(acc_num):
 			name_and_balance.append(accounts[i]['balance'])
 	return name_and_balance
 
-print(account_balance(43546731))
+def transfer(from_account, to_account, value):
+    account_numbers = []
+    for i in range(len(accounts)):
+        account_numbers.append(accounts[i]["account_number"])
+    for i in range(len(accounts)):
+        if from_account not in account_numbers or to_account not in account_numbers:
+            print("404 - account not found")
+            break
+        if accounts[i]["account_number"] == from_account:
+            accounts[i]["balance"] -= value
+        elif accounts[i]["account_number"] == to_account:
+            accounts[i]["balance"] += value
+    return accounts
+
+print(transfer(43546731, 23456311, 50000))
