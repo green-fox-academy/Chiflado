@@ -4,3 +4,11 @@
 # integers like:
 #
 # Sum: 22, Average: 4.4
+
+number = 0
+x = int(input('How many numbers want you sum? '))
+
+for i in range(0, x):
+    number += int(input('Give me a number: '))
+    average = number / (i + 1)
+print('The sum of numbers is: ' + str(number) + ' And the average is: ' + str(average))
