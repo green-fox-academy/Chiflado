@@ -15,3 +15,12 @@ accounts = [
 #
 # Print "404 - account not found" if any of the account numbers don't exist
 
+def account_balance(acc_num):
+	name_and_balance = []
+	for i in range(len(accounts)):
+		if accounts[i]['account_number'] == acc_num:
+			name_and_balance.append(accounts[i]['client_name'])
+			name_and_balance.append(accounts[i]['balance'])
+	return name_and_balance
+
+print(account_balance(43546731))
