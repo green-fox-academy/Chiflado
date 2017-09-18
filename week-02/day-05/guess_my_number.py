@@ -2,7 +2,7 @@ from random import *
 
 user_range = int(input('The number will be between 1 and ... '))
 
-magic_number = randint(1, user_range + 1)
+magic_number = randint(1, user_range)
 
 print('You have 5 lives! \nGuess a number between 1 and ' + str(user_range) + '! ')
 lives = 5
