@@ -8,11 +8,10 @@
 # The function should not raise any error if it could not write the file.
 
 
-file_path = input('Give me the file name: ')
-file_content = input('Give me the word: ')
-file_lines = int(input('How many lines will be in the file? '))
-
-def write_into_a_file(file_path, file_content, file_lines):
+def write_into_a_file():
+    file_path = input('Give me the file name: ')
+    file_content = input('Give me the word: ')
+    file_lines = int(input('How many lines will be in the file? '))
     try:
         my_file = open(file_path, "w")
         for i in range(1, file_lines + 1):
@@ -20,4 +19,4 @@ def write_into_a_file(file_path, file_content, file_lines):
     except FileNotFoundError: 
         return 0
 
-write_into_a_file(file_path, file_content, file_lines)
+write_into_a_file()
