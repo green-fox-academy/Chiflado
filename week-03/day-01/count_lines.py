@@ -9,7 +9,7 @@ def line_counter():
         with open(user_file) as myfile:
             count = sum(1 for line in myfile)
             print(str(count) + ' line(s) is/are in the file')
-    except FileNotFoundError:
+    except Exception:
         return 0
 
 line_counter()
