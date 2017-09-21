@@ -6,6 +6,8 @@
 def ears_of_bunnies_and_mutant_bunnies(bunnies):
     if bunnies == 1:
         return 2
+    elif bunnies == 0:
+        return 0
     elif bunnies % 2 == 0:
         return 3 + (ears_of_bunnies_and_mutant_bunnies(bunnies - 1))
     else:
