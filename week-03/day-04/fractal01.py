@@ -17,7 +17,10 @@ def freakin_fractal(x, y, width):
         canvas.create_line(starting_x + width, y, starting_x + width, y + width * 3)
         canvas.create_line(starting_x - width, y + width, starting_x + width * 2, y + width)
         canvas.create_line(starting_x - width, y + width * 2, starting_x + width * 2, y + width * 2)
-        return freakin_fractal(starting_x, y, width / 3), freakin_fractal(x, starting_y, width / 3), freakin_fractal(starting_x + width, starting_y, width / 3), freakin_fractal(starting_x, starting_y + width, width / 3)
+        freakin_fractal(starting_x, y, width / 3)
+        freakin_fractal(x, starting_y, width / 3)
+        freakin_fractal(starting_x + width, starting_y, width / 3)
+        freakin_fractal(starting_x, starting_y + width, width / 3)
         
 
 freakin_fractal(0, 0, width)
