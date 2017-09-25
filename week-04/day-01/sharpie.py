@@ -10,6 +10,10 @@ class Sharpie(object):
         self.ink_amount -= 0.5
 
 
+    def __repr__(self):
+       return "Sharpie color: {}, Sharpie width: {}, Ink amount: {}".format(self.color, self.width, self.ink_amount)
+
+
 red_sharpie = Sharpie('red', 0.5)
 print(red_sharpie.color, red_sharpie.width, red_sharpie.ink_amount)
 red_sharpie.use()
