@@ -7,6 +7,10 @@ class BlogPost():
         self.publication_date = publication_date
 
 
+    def __repr__(self):
+       return "{}, {}, {}, {}".format(self.author_name, self.title, self.text, self.publication_date)
+
+
 lorem = BlogPost('John Doe', 'Lorem Ipsum', 'Lorem ipsum dolor sit amet.', '2000.05.04.')
 waitbut = BlogPost('Tim Urban', 'Wait but why',
  'A popular long-form, stick-figure-illustrated blog about almost everything.', '2010.10.10')
