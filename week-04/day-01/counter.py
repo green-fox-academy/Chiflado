@@ -15,3 +15,11 @@ class Counter(object):
     def reset(self):
         self.value -= self.get()
 
+
+something = Counter()
+something.add()
+print(something.get())
+something.add(3)
+print(something.get())
+something.reset()
+print(something.get())
