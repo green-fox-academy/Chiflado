@@ -13,7 +13,7 @@ class Person:
 
 class Student(Person):
 
-    def __init__(self, name, age, gender, prev_org, skipped):
+    def __init__(self, name, age, gender, prev_org, skipped=0):
         super().__init__(name, age, gender)
         self.previous_organization = prev_org
         self.skipped_days = skipped
@@ -30,7 +30,18 @@ class Student(Person):
         self.skipped_days += number_of_days
 
         
+class Mentor(Person):
 
+    def __init__(self, name, age, gender, level):
+        super().__init__(name, age, gender)
+        self.level = level
 
-student = Student('Bubu', 29, 'male', 'Akarmi', 0)
+    def get_goal(self):
+        print('My goal is: Educate brilliant junior software developers')
+
+    def introduce(self):
+        print('Hey, my name is ' + self.name + ' a ' + str(self.age) + ' years old ' + self.gender 
+        + ', ' + self.level + ' mentor')
+
+student = Mentor('Bubu', 29, 'male', 'Senior')
 student.introduce()
