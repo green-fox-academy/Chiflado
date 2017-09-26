@@ -30,11 +30,15 @@ class Aircraft(object):
     def get_type(self):
         return 'This is an {}'.format(self.aircraft_type)
 
+    def get_status(self):
+        return 'Type: {}, Ammo: {}, Base Damage: {}, All Damage: {}'.format(self.aircraft_type, self.ammo, 
+    self.base_damage, (self.ammo * self.base_damage))
+
 
 aircraft1 = Aircraft('F18')
 print(aircraft1.ammo)
 print(aircraft1.refill(4))
 print(aircraft1.ammo)
-print(aircraft1.refill(6))
+print(aircraft1.refill(2))
 print(aircraft1.ammo)
-print(aircraft1.get_type())
+print(aircraft1.get_status())
