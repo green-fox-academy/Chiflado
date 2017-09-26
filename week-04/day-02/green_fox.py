@@ -87,6 +87,9 @@ class PallidaClass(object):
             self.mentors.append(mentor)
             return self.mentors
 
+    def info(self):
+        print('Class name: ' + self.class_name + ' Number of students: ' + str(len(self.students)) 
+        + ' Number of mentors: ' + str(len(self.mentors)))
 
 student = Student('Balazs', 29, 'male', 'HellermannTyton')
 # student.introduce()
@@ -96,15 +99,13 @@ rabbit = PallidaClass('Rabbit')
 rabbit.add_student(student)
 student2 = Student('Bubu', 8, 'male', 'National Park')
 
-# print(rabbit.class_name, rabbit.students)
 rabbit.add_student(student2)
-print(rabbit.students)
 
 mentor = Mentor('Gandhi', 158, 'male', 'Senior')
 mentor2 = Mentor('ByeAlex', 26, 'male', 'junior')
 rabbit.add_mentor(mentor)
-print(rabbit.mentors)
-rabbit.add_mentor(mentor2)
-print(rabbit.mentors)
+rabbit.info()
 
+rabbit.add_mentor(mentor2)
+rabbit.info()
  
