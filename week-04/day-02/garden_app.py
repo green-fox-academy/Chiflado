@@ -22,6 +22,9 @@ class Flower(object):
         else:
             return self.name + ' doesn\'t needs water'
 
+    def watered(self, amount):
+        self.water_amount += amount * 0.4
+
 
 class Tree(object):
          
@@ -35,6 +38,19 @@ class Tree(object):
         else:
             return self.name + ' doesn\'t needs water'
 
+    def watered(self, amount):
+        self.water_amount += amount * 0.75
+
+
+
 garden = Garden()
-red = Flower('red', 6)
+red = Flower('red')
 print(red.need_water())
+red.watered(15)
+print(red.water_amount)
+print(red.need_water())
+purple = Tree('purple')
+print(purple.water_amount)
+print(purple.need_water())
+purple.watered(10)
+print(purple.water_amount)
