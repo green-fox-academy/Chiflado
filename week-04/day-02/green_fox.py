@@ -43,5 +43,27 @@ class Mentor(Person):
         print('Hey, my name is ' + self.name + ' a ' + str(self.age) + ' years old ' + self.gender 
         + ', ' + self.level + ' mentor')
 
-student = Mentor('Bubu', 29, 'male', 'Senior')
+
+class Sponsor(Person):
+
+    def __init__(self, name, age, gender, company, hired_students=0):
+        super().__init__(name, age, gender)
+        self.company = company
+        self.hired_students = hired_students
+
+    def introduce(self):
+        print('Hey, my name is ' + self.name + ' a ' + str(self.age) + ' years old ' + self.gender 
+        + ', who represents ' + self.company + ' and I hired ' + str(self.hired_students) 
+        + ' students, so far.')
+
+    def hire(self):
+        self.hired_students += 1
+
+    def get_goal(self):
+        print('My goal is: Hire brilliant junior software developers.')
+
+
+student = Sponsor('Bubu', 29, 'male', 'Pornhub')
+student.introduce()
+student.hire()
 student.introduce()
