@@ -29,6 +29,9 @@ class Student(Person):
     def skip_days(self, number_of_days):
         self.skipped_days += number_of_days
 
+    def __str__(self):
+        return self.name
+
         
 class Mentor(Person):
 
@@ -63,7 +66,32 @@ class Sponsor(Person):
         print('My goal is: Hire brilliant junior software developers.')
 
 
-student = Sponsor('Bubu', 29, 'male', 'Pornhub')
-student.introduce()
-student.hire()
-student.introduce()
+class PallidaClass(object):
+
+    def __init__(self, name):
+        self.class_name = name
+        self.students = []
+        self.mentors = []
+
+    def add_student(self, student):
+        if student in self.students:
+            pass
+        else:    
+            self.students.append(student)
+            return self.students
+
+    def __str__(self):
+        return str(list(map(str,self.students)))
+
+student = Student('Balazs', 29, 'male', 'HellermannTyton')
+# student.introduce()
+rabbit = PallidaClass('Rabbit')
+# print(rabbit.class_name, rabbit.students)
+
+rabbit.add_student(student)
+student2 = Student('Bubu', 8, 'male', 'National Park')
+
+# print(rabbit.class_name, rabbit.students)
+rabbit.add_student(student2)
+print(rabbit)
+
