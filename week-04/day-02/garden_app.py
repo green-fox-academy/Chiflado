@@ -3,6 +3,12 @@ class Garden(object):
     def __init__(self):
         self.plants = []
 
+    def add_plant(self, plant):
+        if plant in self.plants:
+            pass
+        else:
+            return self.plants.append(plant)
+
     
 class Flower(object):
         
