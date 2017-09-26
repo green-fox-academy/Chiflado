@@ -27,6 +27,9 @@ class Aircraft(object):
             self.ammo += loaded_ammo
             return 0
 
+    def get_type(self):
+        return 'This is an {}'.format(self.aircraft_type)
+
 
 aircraft1 = Aircraft('F18')
 print(aircraft1.ammo)
@@ -34,3 +37,4 @@ print(aircraft1.refill(4))
 print(aircraft1.ammo)
 print(aircraft1.refill(6))
 print(aircraft1.ammo)
+print(aircraft1.get_type())
