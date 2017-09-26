@@ -16,6 +16,12 @@ class Flower(object):
         self.name = 'The ' + color + ' flower'
         self.water_amount = water_amount
 
+    def need_water(self):
+        if self.water_amount < 5:
+            return self.name + ' needs water'
+        else:
+            return self.name + ' doesn\'t needs water'
+
 
 class Tree(object):
          
@@ -23,5 +29,12 @@ class Tree(object):
         self.name = 'The ' + color + ' tree'
         self.water_amount = water_amount
 
+    def need_water(self):
+        if self.water_amount < 10:
+            return self.name + ' needs water'
+        else:
+            return self.name + ' doesn\'t needs water'
+
 garden = Garden()
-red = Flower('red')
+red = Flower('red', 6)
+print(red.need_water())
