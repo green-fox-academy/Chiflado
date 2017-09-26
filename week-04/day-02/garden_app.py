@@ -2,17 +2,20 @@ class Garden(object):
     
     def __init__(self):
         self.plants = []
-        self.plants.append(Flower(self.color))
 
     
 class Flower(object):
-    
-     def __init__(self, color):
-         self.name = 'The ' + color + ' flower'
+        
+    def __init__(self, color, water_amount=0):
+        self.name = 'The ' + color + ' flower'
+        self.water_amount = water_amount
 
 
 class Tree(object):
-    pass
+         
+    def __init__(self, color, water_amount=0):
+        self.name = 'The ' + color + ' tree'
+        self.water_amount = water_amount
 
 garden = Garden()
 red = Flower('red')
