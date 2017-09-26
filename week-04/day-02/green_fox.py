@@ -81,11 +81,12 @@ class PallidaClass(object):
             return self.students
 
     def add_mentor(self, mentor):
-        if student in self.mentors:
+        if mentor in self.mentors:
             pass
         else:    
             self.mentors.append(mentor)
             return self.mentors
+
 
 student = Student('Balazs', 29, 'male', 'HellermannTyton')
 # student.introduce()
