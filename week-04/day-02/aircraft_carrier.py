@@ -15,10 +15,7 @@ class Aircraft(object):
         self.ammo = 0
 
     def refill(self, loaded_ammo):
-        return loaded_ammo - self.ammo
-        self.ammo = self.ammo + loaded_ammo
-        if self.ammo > self.max_ammo:
-            self.ammo = self.max_ammo
+        if loaded_ammo <= max
 
 aircraft1 = Aircraft('F18')
 print(aircraft1.ammo)

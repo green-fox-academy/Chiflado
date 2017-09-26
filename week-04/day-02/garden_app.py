@@ -44,11 +44,7 @@ class Flower(object):
         return "The {} Flower {}".format(self.name, self.need_water())
 
 
-class Tree(object):
-         
-    def __init__(self, color, water_amount=0):
-        self.name = color
-        self.water_amount = water_amount
+class Tree(Flower):
 
     def need_water(self):
         if self.water_amount < 10:
