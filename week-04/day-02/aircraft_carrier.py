@@ -11,8 +11,9 @@ class Aircraft(object):
             self.base_damage = 50
 
     def fight(self):
-        return self.ammo * self.base_damage
+        damage = self.ammo * self.base_damage
         self.ammo = 0
+        return damage
 
     def refill(self, loaded_ammo):
         if self.ammo == self.max_ammo:
@@ -41,4 +42,6 @@ print(aircraft1.refill(4))
 print(aircraft1.ammo)
 print(aircraft1.refill(2))
 print(aircraft1.ammo)
+print(aircraft1.get_status())
+aircraft1.fight()
 print(aircraft1.get_status())
