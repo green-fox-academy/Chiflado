@@ -42,5 +42,10 @@ class AppleTest(unittest.TestCase):
         test_letter_counter = Apple()
         self.assertEqual(test_letter_counter.letter_counter('ab'), {'a' : 1, 'b' : 1})
 
+    def test_letter_counter_same(self):
+        test_letter_counter = Apple()
+        self.assertEqual(test_letter_counter.letter_counter('aab'), {'a' : 2, 'b' : 1})
+
+
 if __name__ == '__main__':
     unittest.main()
