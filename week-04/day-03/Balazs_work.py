@@ -30,4 +30,3 @@ class Apple(object):
             return self.fibonacci(fib_index - 1) + self.fibonacci(fib_index - 2)
 
 summa = Apple()
-print(summa.fibonacci(11))

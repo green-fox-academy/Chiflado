@@ -50,6 +50,9 @@ class AppleTest(unittest.TestCase):
         test_fibonacci = Apple()
         self.assertEqual(test_fibonacci.fibonacci(11), 89)
 
+    def test_fibonacci_one(self):
+        test_fibonacci = Apple()
+        self.assertEqual(test_fibonacci.fibonacci(1), 1)
 
 if __name__ == '__main__':
     unittest.main()
