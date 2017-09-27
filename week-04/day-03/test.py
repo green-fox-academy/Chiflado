@@ -8,9 +8,11 @@ class TestExtend(unittest.TestCase):
     def test_add(self):
         self.assertEqual(extend.add(2, 4), 6)
 
-
     def test_max_of_three_first(self):
-        self.assertEqual(extend.max_of_three(5, 4, 3), 5)
+        self.assertEqual(extend.max_of_three(5, 2, 3), 5)
+
+    def test_max_of_three_second(self):
+        self.assertEqual(extend.max_of_three(5, 11, 3), 11)
 
     def test_max_of_three_third(self):
         self.assertEqual(extend.max_of_three(3, 4, 5), 5)
