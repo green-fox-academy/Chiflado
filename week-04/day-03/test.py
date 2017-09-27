@@ -26,8 +26,11 @@ class TestExtend(unittest.TestCase):
     def test_is_vovel_a(self):
         self.assertTrue(extend.is_vovel('a'))
 
-    def test_is_vovel_u(self):
-        self.assertTrue(extend.is_vovel('u'))
+    def test_is_vovel_capital_letter(self):
+        self.assertTrue(extend.is_vovel('Ú'))
+
+    def test_is_vovel_consonant(self):
+        self.assertFalse(extend.is_vovel('f'))
 
     def test_translate_bemutatkozik(self):
         self.assertEqual(extend.translate('bemutatkozik'), 'bevemuvutavatkovozivik')
