@@ -27,6 +27,7 @@ class Apple(object):
         if fib_index <= 1:
             return fib_index
         else:
-            return fibonacci(fib_index - 1) + fibonacci(fib_index - 2)
+            return self.fibonacci(fib_index - 1) + self.fibonacci(fib_index - 2)
 
 summa = Apple()
+print(summa.fibonacci(11))

@@ -46,6 +46,10 @@ class AppleTest(unittest.TestCase):
         test_letter_counter = Apple()
         self.assertEqual(test_letter_counter.letter_counter('aab'), {'a' : 2, 'b' : 1})
 
+    def test_fibonacci(self):
+        test_fibonacci = Apple()
+        self.assertEqual(test_fibonacci.fibonacci(11), 89)
+
 
 if __name__ == '__main__':
     unittest.main()
