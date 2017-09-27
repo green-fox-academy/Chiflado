@@ -14,5 +14,13 @@ class Apple(object):
         else:
             return False
 
+    def letter_counter(self, my_string):
+        my_dictionary = {}
+        for letter in my_string:
+            if letter in my_dictionary:
+                my_dictionary[letter] += 1
+            else:
+                my_dictionary[letter] = 1
+        return my_dictionary
 
 summa = Apple()
