@@ -30,6 +30,11 @@ class AppleTest(unittest.TestCase):
         test_get_anagram = Apple()
         self.assertFalse(test_get_anagram.get_anagram('abcd', 'cjab'))
 
+    def test_letter_counter_empty(self):
+        test_letter_counter = Apple()
+        self.assertEqual(test_letter_counter.letter_counter(''), {})
+
+
 
 if __name__ == '__main__':
     unittest.main()
