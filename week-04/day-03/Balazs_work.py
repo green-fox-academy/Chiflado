@@ -23,4 +23,10 @@ class Apple(object):
                 my_dictionary[letter] = 1
         return my_dictionary
 
+    def fibonacci(self, fib_index):
+        if fib_index <= 1:
+            return fib_index
+        else:
+            return fibonacci(fib_index - 1) + fibonacci(fib_index - 2)
+
 summa = Apple()
