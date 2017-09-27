@@ -6,6 +6,21 @@ class AppleTest(unittest.TestCase):
         test_apple = Apple()
         self.assertEqual(test_apple.get_apple(), 'apple')
 
+    def test_get_sum(self):
+        test_sum = Apple()
+        self.assertEqual(test_sum.get_sum([1,2,3]), 6)
+
+    def test_get_sum_empty(self):
+        test_sum = Apple()
+        self.assertEqual(test_sum.get_sum([]), 0)        
+
+    def test_get_sum_one(self):
+        test_sum = Apple()
+        self.assertEqual(test_sum.get_sum([1]), 1)
+
+    def test_get_sum_null(self):
+        test_sum = Apple()
+        self.assertEqual(test_sum.get_sum([0]), 0)
 
 if __name__ == '__main__':
     unittest.main()
