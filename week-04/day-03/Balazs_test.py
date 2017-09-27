@@ -22,5 +22,14 @@ class AppleTest(unittest.TestCase):
         test_sum = Apple()
         self.assertEqual(test_sum.get_sum([0]), 0)
 
+    def test_get_anagram_true(self):
+        test_get_anagram = Apple()
+        self.assertTrue(test_get_anagram.get_anagram('abcd', 'cdab'))
+
+    def test_get_anagram_false(self):
+        test_get_anagram = Apple()
+        self.assertFalse(test_get_anagram.get_anagram('abcd', 'cjab'))
+
+
 if __name__ == '__main__':
     unittest.main()
