@@ -3,34 +3,37 @@ import PIL
 from PIL import Image
 
 root = Tk()
-canvas_width = 650
-canvas_height = 650
+canvas_width = 720
+canvas_height = 720
 
 canvas = Canvas(root, width=canvas_width, height=canvas_height)
 canvas.pack()
 
-field_width = canvas_width / 10
-field_height = canvas_height / 10
+field_size = 72
+floor = PhotoImage(file = 'floor.png')
 
-basewidth = int(field_width)
-img = Image.open('floor.png')
-wpercent = (basewidth / float(img.size[0]))
-hsize = int((float(img.size[1]) * float(wpercent)))
-img = img.resize((basewidth, hsize), PIL.Image.ANTIALIAS)
-img.save('resized_floor.png')
+class Map:
 
-floor = PhotoImage(file = 'resized_floor.png')
-
-
-class drawing_map:
-
+    def __init__(self):
+        self.level_map = [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
+                          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
+                          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
+                          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
+                          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
+                          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
+                          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
+                          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
+                          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,],
+                          [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,]]
+    
     def draw_floor(self):
-        for row in range(10):
-            for column in range(10):
-                canvas.create_image(row * field_width + field_width / 2, 
-                column * field_height + field_height / 2, image = floor)
+        for column in range(len(self.level_map)):
+            for row in range(len(self.level_map)):
+                if self.level_map[column][row] == 0:
+                    canvas.create_image(field_size / 2 + row * field_size, 
+                    field_size / 2 + column * field_size, image = floor)
 
-level_map = drawing_map()
+level_map = Map()
 level_map.draw_floor()
 
 
