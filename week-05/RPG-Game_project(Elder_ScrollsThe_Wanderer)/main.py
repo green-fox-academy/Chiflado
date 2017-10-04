@@ -1,14 +1,13 @@
 from level_map import Map
+from viewer import Viewer
 
-root = Tk()
-canvas_width = 720
-canvas_height = 720
 
-canvas = Canvas(root, width=canvas_width, height=canvas_height)
-canvas.pack()
+class Game:
+    
+    def __init__(self):
+        self.my_map = Map()
+        self.my_view = Viewer()
+        self.my_view.draw_area()
+        self.my_view.display()
 
-my_map = Map()
-my_map.draw_floor()
-my_map.draw_wall()
-
-root.mainloop()
+game = Game()
