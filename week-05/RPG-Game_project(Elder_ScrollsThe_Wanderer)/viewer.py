@@ -11,6 +11,8 @@ class Viewer:
         self.canvas = Canvas(self.root, width = self.size, height = self.size)
         self.floor = PhotoImage(file = 'floor.png')
         self.wall = PhotoImage(file = 'wall.png')
+        self.hero_down = PhotoImage(file = "hero-down.png")
+        self.chars_on_screen = []
         self.canvas.pack()
         self.canvas.focus_set()
 
@@ -23,6 +25,14 @@ class Viewer:
                 elif self.my_map.level_map[column][row] == 1:
                     self.canvas.create_image(self.field_size / 2 + row * self.field_size, 
                     self.field_size / 2 + column * self.field_size, image = self.wall)
+
+    def draw_entity(self, image, x, y):
+        self.entity = self.canvas.create_image(x * 72, y * 72, anchor = NW, image = image)
+        return self.entity
+    
+    def draw_hero(self, image, x, y):
+        self.hero = self.draw_entity(image, x, y)
+        self.chars_on_screen.append(self.hero)
 
     def display(self):
         self.root.mainloop()
