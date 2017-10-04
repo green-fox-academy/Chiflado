@@ -12,7 +12,7 @@ class Map:
                           [1, 0, 1, 1, 1, 1, 0, 1, 1, 1,],
                           [0, 0, 0, 0, 0, 0, 0, 1, 1, 1,]]
 
-        def get_cell(self, x, y):
-            x = int(x / 72)
-            y = int(y / 72)
-            return self.level_map[y][x]
+    def get_cell(self, x, y):
+        if 0 <= x <= 9 and 0 <= y <= 9:
+            if self.level_map[y][x] == 0:
+                return True

@@ -1,14 +1,15 @@
 from tkinter import *
 from level_map import Map
+from entity import Hero
 
 class Viewer:
 
     def __init__(self):
         self.my_map = Map()
+        self.my_hero = Hero()
         self.root = Tk()
         self.size = 720
         self.field_size = 72
-        self.pressnum = 0
         self.canvas = Canvas(self.root, width = self.size, height = self.size)
         self.floor = PhotoImage(file = 'floor.png')
         self.wall = PhotoImage(file = 'wall.png')
@@ -34,32 +35,29 @@ class Viewer:
     def draw_entity(self, image, x, y):
         self.entity = self.canvas.create_image(x * 72, y * 72, anchor = NW, image = image)
         return self.entity
-    
-    def draw_hero(self, image, x, y):
-        self.hero = self.draw_entity(image, x, y)
-        self.chars_on_screen.append(self.hero)
 
-    def move(self, char, dx, dy):
-        self.canvas.move(char, dx*72, dy*72)
+    def draw_hero(self, image, x, y):
+        x = self.field_size / 2
+        y = self.field_size / 2
+        self.my_hero.hero = self.canvas.create_image(x, y, image = self.hero_down)
+
+    def update_image(self, new_image):
+        self.canvas.itemconfig(self.my_hero, image = new_image)
+
+    def move(self, char, x, y):
+        self.my_hero.coord_x += x
+        self.my_hero.coord_y += y
+        self.canvas.move(char, x * 72, y * 72)
 
     def on_key_press(self, e):
-        coords = self.canvas.coords(self.hero)
-        coords[0] = coords[0]//72
-        coords[1] = coords[1]//72
-        self.canvas.delete(self.hero)
-        self.pressnum += 1
-        if e.keysym == 'Up':
-            self.draw_hero(self.hero_up,coords[0], coords[1])
-            self.move(self.hero, 0, -1)
-        elif e.keysym == 'Down':
-            self.draw_hero(self.hero_down,coords[0], coords[1])
-            self.move(self.hero, 0, 1)
-        elif e.keysym == 'Right':
-            self.draw_hero(self.hero_right,coords[0], coords[1])
-            self.move(self.hero, 1, 0)
-        elif e.keysym == 'Left':
-            self.draw_hero(self.hero_left,coords[0], coords[1])
-            self.move(self.hero, -1, 0)
+        if e.keysym == 'Up' and self.my_map.get_cell(self.my_hero.coord_x, self.my_hero.coord_y - 1) == True:
+             self.move(self.my_hero.hero, 0, -1)
+        elif e.keysym == 'Down' and self.my_map.get_cell(self.my_hero.coord_x, self.my_hero.coord_y + 1) == True:
+             self.move(self.my_hero.hero, 0, 1)
+        elif e.keysym == 'Right' and self.my_map.get_cell(self.my_hero.coord_x + 1, self.my_hero.coord_y) == True:
+             self.move(self.my_hero.hero, 1, 0)
+        elif e.keysym == 'Left' and self.my_map.get_cell(self.my_hero.coord_x - 1, self.my_hero.coord_y) == True:
+             self.move(self.my_hero.hero, -1, 0)
 
     def display(self):
         self.root.mainloop()
