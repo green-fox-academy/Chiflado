@@ -42,7 +42,7 @@ class Viewer:
         self.my_hero.hero = self.canvas.create_image(x, y, image = self.hero_down)
 
     def update_image(self, new_image):
-        self.canvas.itemconfig(self.my_hero, image = new_image)
+        self.canvas.itemconfig(self.my_hero.hero, image = new_image)
 
     def move(self, char, x, y):
         self.my_hero.coord_x += x
@@ -50,14 +50,22 @@ class Viewer:
         self.canvas.move(char, x * 72, y * 72)
 
     def on_key_press(self, e):
-        if e.keysym == 'Up' and self.my_map.get_cell(self.my_hero.coord_x, self.my_hero.coord_y - 1) == True:
-             self.move(self.my_hero.hero, 0, -1)
-        elif e.keysym == 'Down' and self.my_map.get_cell(self.my_hero.coord_x, self.my_hero.coord_y + 1) == True:
-             self.move(self.my_hero.hero, 0, 1)
-        elif e.keysym == 'Right' and self.my_map.get_cell(self.my_hero.coord_x + 1, self.my_hero.coord_y) == True:
-             self.move(self.my_hero.hero, 1, 0)
-        elif e.keysym == 'Left' and self.my_map.get_cell(self.my_hero.coord_x - 1, self.my_hero.coord_y) == True:
-             self.move(self.my_hero.hero, -1, 0)
+        if e.keysym == 'Up':
+             self.update_image(self.hero_up)
+             if self.my_map.get_cell(self.my_hero.coord_x, self.my_hero.coord_y - 1) == True:
+                self.move(self.my_hero.hero, 0, -1)
+        elif e.keysym == 'Down':
+             self.update_image(self.hero_down)
+             if self.my_map.get_cell(self.my_hero.coord_x, self.my_hero.coord_y + 1) == True:
+                self.move(self.my_hero.hero, 0, 1)
+        elif e.keysym == 'Right':
+            self.update_image(self.hero_right)
+            if self.my_map.get_cell(self.my_hero.coord_x + 1, self.my_hero.coord_y) == True:
+                self.move(self.my_hero.hero, 1, 0)
+        elif e.keysym == 'Left':
+             self.update_image(self.hero_left)
+             if self.my_map.get_cell(self.my_hero.coord_x - 1, self.my_hero.coord_y) == True:
+                self.move(self.my_hero.hero, -1, 0)
 
     def display(self):
         self.root.mainloop()

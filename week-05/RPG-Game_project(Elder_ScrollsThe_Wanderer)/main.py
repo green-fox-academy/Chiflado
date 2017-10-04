@@ -1,5 +1,5 @@
 from level_map import Map
-from viewer import Viewer, Hero
+from viewer import Viewer
 
 
 class Game:
