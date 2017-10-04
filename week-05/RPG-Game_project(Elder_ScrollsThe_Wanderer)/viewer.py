@@ -8,11 +8,16 @@ class Viewer:
         self.root = Tk()
         self.size = 720
         self.field_size = 72
+        self.pressnum = 0
         self.canvas = Canvas(self.root, width = self.size, height = self.size)
         self.floor = PhotoImage(file = 'floor.png')
         self.wall = PhotoImage(file = 'wall.png')
         self.hero_down = PhotoImage(file = "hero-down.png")
+        self.hero_up = PhotoImage(file = "hero-up.png")
+        self.hero_right = PhotoImage(file = "hero-right.png")
+        self.hero_left = PhotoImage(file = "hero-left.png")
         self.chars_on_screen = []
+        self.root.bind("<KeyPress>", self.on_key_press)
         self.canvas.pack()
         self.canvas.focus_set()
 
@@ -33,6 +38,28 @@ class Viewer:
     def draw_hero(self, image, x, y):
         self.hero = self.draw_entity(image, x, y)
         self.chars_on_screen.append(self.hero)
+
+    def move(self, char, dx, dy):
+        self.canvas.move(char, dx*72, dy*72)
+
+    def on_key_press(self, e):
+        coords = self.canvas.coords(self.hero)
+        coords[0] = coords[0]//72
+        coords[1] = coords[1]//72
+        self.canvas.delete(self.hero)
+        self.pressnum += 1
+        if e.keysym == 'Up':
+            self.draw_hero(self.hero_up,coords[0], coords[1])
+            self.move(self.hero, 0, -1)
+        elif e.keysym == 'Down':
+            self.draw_hero(self.hero_down,coords[0], coords[1])
+            self.move(self.hero, 0, 1)
+        elif e.keysym == 'Right':
+            self.draw_hero(self.hero_right,coords[0], coords[1])
+            self.move(self.hero, 1, 0)
+        elif e.keysym == 'Left':
+            self.draw_hero(self.hero_left,coords[0], coords[1])
+            self.move(self.hero, -1, 0)
 
     def display(self):
         self.root.mainloop()
