@@ -1,24 +1,26 @@
 from tkinter import *
 from level_map import Map
-from entity import Hero
+from entity import Hero, Skeleton
 
 class Viewer:
 
     def __init__(self):
         self.my_map = Map()
         self.my_hero = Hero()
+        self.skeleton = Skeleton()
         self.root = Tk()
         self.size = 720
         self.field_size = 72
         self.canvas = Canvas(self.root, width = self.size, height = self.size)
         self.floor = PhotoImage(file = 'floor.png')
         self.wall = PhotoImage(file = 'wall.png')
-        self.hero_down = PhotoImage(file = "hero-down.png")
-        self.hero_up = PhotoImage(file = "hero-up.png")
-        self.hero_right = PhotoImage(file = "hero-right.png")
-        self.hero_left = PhotoImage(file = "hero-left.png")
+        self.hero_down = PhotoImage(file = 'hero-down.png')
+        self.hero_up = PhotoImage(file = 'hero-up.png')
+        self.hero_right = PhotoImage(file = 'hero-right.png')
+        self.hero_left = PhotoImage(file = 'hero-left.png')
+        self.skeleton_pic = PhotoImage(file = 'skeleton.png')
         self.chars_on_screen = []
-        self.root.bind("<KeyPress>", self.on_key_press)
+        self.root.bind('<KeyPress>', self.on_key_press)
         self.canvas.pack()
         self.canvas.focus_set()
 
@@ -33,13 +35,14 @@ class Viewer:
                     self.field_size / 2 + column * self.field_size, image = self.wall)
 
     def draw_entity(self, image, x, y):
-        self.entity = self.canvas.create_image(x * 72, y * 72, anchor = NW, image = image)
-        return self.entity
+        x = self.field_size * x + self.field_size / 2
+        y = self.field_size * y + self.field_size / 2
+        self.skeleton.entity = self.canvas.create_image(x, y, image = image)
 
     def draw_hero(self, image, x, y):
         x = self.field_size / 2
         y = self.field_size / 2
-        self.my_hero.hero = self.canvas.create_image(x, y, image = self.hero_down)
+        self.my_hero.hero = self.canvas.create_image(x, y, image = image)
 
     def update_image(self, new_image):
         self.canvas.itemconfig(self.my_hero.hero, image = new_image)
@@ -47,7 +50,7 @@ class Viewer:
     def move(self, char, x, y):
         self.my_hero.coord_x += x
         self.my_hero.coord_y += y
-        self.canvas.move(char, x * 72, y * 72)
+        self.canvas.move(char, x * self.field_size, y * self.field_size)
 
     def on_key_press(self, e):
         if e.keysym == 'Up':
