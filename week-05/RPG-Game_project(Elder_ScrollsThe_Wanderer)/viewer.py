@@ -19,6 +19,7 @@ class Viewer:
         self.hero_right = PhotoImage(file = 'hero-right.png')
         self.hero_left = PhotoImage(file = 'hero-left.png')
         self.skeleton_pic = PhotoImage(file = 'skeleton.png')
+        self.boss_pic = PhotoImage(file = 'boss.png')
         self.chars_on_screen = []
         self.root.bind('<KeyPress>', self.on_key_press)
         self.canvas.pack()
