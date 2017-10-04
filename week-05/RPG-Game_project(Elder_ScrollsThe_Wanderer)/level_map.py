@@ -27,19 +27,16 @@ class Map:
                           [1, 0, 1, 1, 1, 1, 0, 1, 1, 1,],
                           [0, 0, 0, 0, 0, 0, 0, 1, 1, 1,]]
     
-    def draw_floor(self):
+    def draw_area(self):
         for column in range(len(self.level_map)):
             for row in range(len(self.level_map)):
                 if self.level_map[column][row] == 0:
                     canvas.create_image(self.field_size / 2 + row * self.field_size, 
                     self.field_size / 2 + column * self.field_size, image = self.floor)
-
-    def draw_wall(self):
-        for column in range(len(self.level_map)):
-            for row in range(len(self.level_map)):
-                if self.level_map[column][row] == 1:
+                elif self.level_map[column][row] == 1:
                     canvas.create_image(self.field_size / 2 + row * self.field_size, 
                     self.field_size / 2 + column * self.field_size, image = self.wall)
+
 
 class Entity:
 
@@ -55,8 +52,7 @@ class Entity:
 
 
 my_map = Map()
-my_map.draw_floor()
-my_map.draw_wall() 
+my_map.draw_area()
 entity = Entity()
 entity.base_shape(72/2, 72/2, 72)
 
