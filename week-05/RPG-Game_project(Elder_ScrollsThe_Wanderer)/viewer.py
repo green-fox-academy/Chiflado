@@ -1,10 +1,13 @@
 from tkinter import *
 from level_map import Map
 from entity import Hero, Skeleton, Boss
+from random import randint
 
 class Viewer:
 
     def __init__(self):
+        self.skeletons = 0
+        self.boss_counter = 0
         self.my_map = Map()
         self.my_hero = Hero()
         self.skeleton = Skeleton()
@@ -12,6 +15,7 @@ class Viewer:
         self.root = Tk()
         self.size = 720
         self.field_size = 72
+        self.root.title("Elder Scrolls: The Wanderer")
         self.canvas = Canvas(self.root, width = self.size + 200, height = self.size, background = '#663300')
         self.floor = PhotoImage(file = 'floor.png')
         self.wall = PhotoImage(file = 'wall.png')
@@ -39,6 +43,14 @@ class Viewer:
         x = self.field_size * x + self.field_size / 2
         y = self.field_size * y + self.field_size / 2
         enemy.entity = self.canvas.create_image(x, y, image = image)
+
+    def monster_drawer(self, enemy, enemy_shape, image):    
+        while enemy < 1:
+            self.monster_x = randint(0, 9)
+            self.monster_y = randint(0, 9)
+            if self.my_map.get_cell(self.monster_x, self.monster_y) == True:
+                self.draw_entity(enemy_shape, image, self.monster_x, self.monster_y)
+                enemy += 1
 
     def draw_hero(self, image, x, y):
         x = self.field_size / 2
