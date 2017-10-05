@@ -34,5 +34,16 @@ class Skeleton(Entity):
     def attributes(self):
         super().attributes(level = 1, max_hp = 2)
         self.max_hp = max_hp + self.level * self.d6
-        self.defence_point = self.level * self.d6
-        self.strike_point = self.level + self.d6
+        self.defence_point = (self.level / 2) * self.d6
+        self.strike_point = self.level * self.d6
+
+class Boss(Entity):
+
+    def __init__(self):
+        super().__init__()
+
+    def attributes(self):
+        super().attributes(level = 1, max_hp = 2)
+        self.max_hp = max_hp + self.level * self.d6 + self.d6
+        self.defence_point = self.level * self.d6 + self.d6 / 2
+        self.strike_point = self.level * self.d6 + self.level

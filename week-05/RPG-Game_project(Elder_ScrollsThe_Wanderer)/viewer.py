@@ -1,6 +1,6 @@
 from tkinter import *
 from level_map import Map
-from entity import Hero, Skeleton
+from entity import Hero, Skeleton, Boss
 
 class Viewer:
 
@@ -8,6 +8,7 @@ class Viewer:
         self.my_map = Map()
         self.my_hero = Hero()
         self.skeleton = Skeleton()
+        self.boss = Boss()
         self.root = Tk()
         self.size = 720
         self.field_size = 72
@@ -20,7 +21,6 @@ class Viewer:
         self.hero_left = PhotoImage(file = 'hero-left.png')
         self.skeleton_pic = PhotoImage(file = 'skeleton.png')
         self.boss_pic = PhotoImage(file = 'boss.png')
-        self.chars_on_screen = []
         self.root.bind('<KeyPress>', self.on_key_press)
         self.canvas.pack()
         self.canvas.focus_set()
@@ -35,10 +35,10 @@ class Viewer:
                     self.canvas.create_image(self.field_size / 2 + row * self.field_size, 
                     self.field_size / 2 + column * self.field_size, image = self.wall)
 
-    def draw_entity(self, image, x, y):
+    def draw_entity(self, enemy, image, x, y):
         x = self.field_size * x + self.field_size / 2
         y = self.field_size * y + self.field_size / 2
-        self.skeleton.entity = self.canvas.create_image(x, y, image = image)
+        enemy.entity = self.canvas.create_image(x, y, image = image)
 
     def draw_hero(self, image, x, y):
         x = self.field_size / 2

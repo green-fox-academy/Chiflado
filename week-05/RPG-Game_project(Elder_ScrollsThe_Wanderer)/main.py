@@ -16,13 +16,13 @@ class Game:
             self.monster_x = randint(0, 9)
             self.monster_y = randint(0, 9)
             if self.my_map.get_cell(self.monster_x, self.monster_y) == True:
-                self.my_view.draw_entity(self.my_view.skeleton_pic, self.monster_x, self.monster_y)
+                self.my_view.draw_entity(self.my_view.skeleton, self.my_view.skeleton_pic, self.monster_x, self.monster_y)
                 self.skeletons += 1
         while self.boss < 1:
             self.monster_x = randint(0, 9)
             self.monster_y = randint(0, 9)
             if self.my_map.get_cell(self.monster_x, self.monster_y) == True:
-                self.my_view.draw_entity(self.my_view.boss_pic, self.monster_x, self.monster_y)
+                self.my_view.draw_entity(self.my_view.boss, self.my_view.boss_pic, self.monster_x, self.monster_y)
                 self.boss += 1
 
         self.my_view.display()
