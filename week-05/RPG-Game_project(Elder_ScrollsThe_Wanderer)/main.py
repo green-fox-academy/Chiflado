@@ -13,12 +13,14 @@ class Game:
         self.my_view = Viewer()
         self.my_view.draw_area()
         self.my_view.draw_hero(self.my_view.hero_down, 0, 0)
-        while self.counter < self.number_of_skeletons:
-            self.my_view.monster_drawer(self.my_view.skeletons, self.my_view.skeleton, self.my_view.skeleton_pic)
-            self.counter += 1
-        self.my_view.monster_drawer(self.my_view.boss_counter, self.my_view.boss, self.my_view.boss_pic)
+        # while self.counter < self.number_of_skeletons:
+        #     self.my_view.monster_drawer(self.my_view.skeletons, self.my_view.skeleton, self.my_view.skeleton_pic)
+        #     self.counter += 1
+        # self.my_view.monster_drawer(self.my_view.boss_counter, self.my_view.boss, self.my_view.boss_pic)
+        self.my_view.spawn_skeletons()
         self.my_view.draw_statusbar()
 
         self.my_view.display()
+        print(self.my_view.skeleton_list[0])
 
 game = Game(3)
