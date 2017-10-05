@@ -12,7 +12,7 @@ class Viewer:
         self.root = Tk()
         self.size = 720
         self.field_size = 72
-        self.canvas = Canvas(self.root, width = self.size, height = self.size)
+        self.canvas = Canvas(self.root, width = self.size + 200, height = self.size, background = '#663300')
         self.floor = PhotoImage(file = 'floor.png')
         self.wall = PhotoImage(file = 'wall.png')
         self.hero_down = PhotoImage(file = 'hero-down.png')
@@ -71,5 +71,12 @@ class Viewer:
              if self.my_map.get_cell(self.my_hero.coord_x - 1, self.my_hero.coord_y) == True:
                 self.move(self.my_hero.hero, -1, 0)
 
+    def draw_statusbar(self):
+        self.menu_text = self.canvas.create_text(820, 70, fill='white', font='Times 20 italic bold',
+                        text='HERO(Level ' + str(self.my_hero.level)
+                         + ')\nHP: ' + str(self.my_hero.max_hp) + ':' + str(self.my_hero.current_hp)
+                         + '\nDP: '+ str(self.my_hero.defence_point) 
+                         + '\nSP: ' + str(self.my_hero.strike_point))
+    
     def display(self):
         self.root.mainloop()
