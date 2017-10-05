@@ -33,11 +33,14 @@ class Viewer:
         for column in range(len(self.my_map.level_map)):
             for row in range(len(self.my_map.level_map)):
                 if self.my_map.level_map[column][row] == 0:
-                    self.canvas.create_image(self.field_size / 2 + row * self.field_size, 
-                    self.field_size / 2 + column * self.field_size, image = self.floor)
+                    self.draw_fields(column, row, self.floor)
                 elif self.my_map.level_map[column][row] == 1:
-                    self.canvas.create_image(self.field_size / 2 + row * self.field_size, 
-                    self.field_size / 2 + column * self.field_size, image = self.wall)
+                    self.draw_fields(column, row, self.wall)
+
+    def draw_fields(self, column, row, image):
+        self.canvas.create_image(self.field_size / 2 + row * self.field_size, 
+        self.field_size / 2 + column * self.field_size, image = image)
+
 
     def draw_entity(self, enemy, image, x, y):
         x = self.field_size * x + self.field_size / 2
