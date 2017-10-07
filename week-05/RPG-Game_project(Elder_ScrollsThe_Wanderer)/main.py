@@ -7,6 +7,7 @@ from random import randint
 class Game:
     
     def __init__(self, number_of_skeletons):
+        self.skeleton_list = []
         self.counter = 0
         self.number_of_skeletons = number_of_skeletons
         self.my_map = Map()
@@ -17,10 +18,18 @@ class Game:
         #     self.my_view.monster_drawer(self.my_view.skeletons, self.my_view.skeleton, self.my_view.skeleton_pic)
         #     self.counter += 1
         # self.my_view.monster_drawer(self.my_view.boss_counter, self.my_view.boss, self.my_view.boss_pic)
-        self.my_view.spawn_skeletons()
+        self.spawn_skeletons(self.number_of_skeletons)
         self.my_view.draw_statusbar()
 
         self.my_view.display()
-        print(self.my_view.skeleton_list[0])
+
+    def spawn_skeletons(self, number_of_skeletons):
+        while self.counter < number_of_skeletons:
+            coord_x = randint(0, 9)
+            coord_y = randint(0, 9)
+            if self.my_map.get_cell(coord_x, coord_y) == True:
+                skeleton = Skeleton(coord_x, coord_y)
+                self.skeleton_list.append(skeleton)
+                self.counter += 1
 
 game = Game(3)

@@ -6,13 +6,11 @@ from random import randint
 class Viewer:
 
     def __init__(self):
-        self.skeleton_list = []
         self.skeletons = 0
         self.boss_counter = 0
         self.counter = 0
         self.my_map = Map()
         self.my_hero = Hero()
-        # self.skeleton = Skeleton()
         # self.boss = Boss()
         self.root = Tk()
         self.size = 720
@@ -42,15 +40,6 @@ class Viewer:
     def draw_fields(self, column, row, image):
         self.canvas.create_image(self.field_size / 2 + row * self.field_size, 
         self.field_size / 2 + column * self.field_size, image = image)
-
-    def spawn_skeletons(self):
-        while self.counter < 1:
-            coord_x = randint(0, 9)
-            coord_y = randint(0, 9)
-            if self.my_map.get_cell(coord_x, coord_y) == True:
-                skeleton = Skeleton(coord_x, coord_y)
-                self.skeleton_list.append(skeleton)
-                self.counter += 1
 
     def draw_entity(self, enemy, image, x, y):
         x = self.field_size * x + self.field_size / 2
