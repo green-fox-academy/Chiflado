@@ -6,9 +6,6 @@ from random import randint
 class Viewer:
 
     def __init__(self):
-        self.skeletons = 0
-        self.boss_counter = 0
-        self.counter = 0
         self.my_map = Map()
         self.my_hero = Hero()
         # self.boss = Boss()
@@ -41,11 +38,12 @@ class Viewer:
         self.canvas.create_image(self.field_size / 2 + row * self.field_size, 
         self.field_size / 2 + column * self.field_size, image = image)
 
-    def draw_entity(self, enemy_list, image):
+    def draw_entity(self, enemy_list):
         for entity in enemy_list:
             x = entity.coord_x * self.field_size + 36
             y = entity.coord_y * self.field_size + 36
-            entity.entity = self.canvas.create_image(x, y, image = image)
+            if entity == Boss(entity.coord_x, entity.coord_y, level = 1, max_hp = 2):
+                entity.entity = self.canvas.create_image(x, y, image = self.skeleton_pic)
 
     def draw_hero(self, image, x, y):
         x = self.field_size / 2

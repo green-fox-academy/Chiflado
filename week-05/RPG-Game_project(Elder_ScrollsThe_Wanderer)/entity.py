@@ -16,6 +16,7 @@ class Entity:
     def dice_roll(self):
         self.d6 = randint(1,6)
         return self.d6
+    
 
 class Hero(Entity):
 
@@ -33,7 +34,7 @@ class Hero(Entity):
 
 class Skeleton(Entity):
 
-    def __init__(self,coord_x, coord_y, level = 1, max_hp = 2):
+    def __init__(self, coord_x, coord_y, level = 1, max_hp = 2):
         super().__init__(coord_x, coord_y)
         self.max_hp = max_hp + self.level * self.dice_roll()
         self.current_hp = self.max_hp
@@ -42,8 +43,8 @@ class Skeleton(Entity):
 
 class Boss(Entity):
 
-    def __init__(self, level = 1, max_hp = 2):
-        super().__init__()
+    def __init__(self, coord_x, coord_y, level = 1, max_hp = 2):
+        super().__init__(coord_x, coord_y)
         self.max_hp = max_hp + self.level * self.dice_roll() + self.dice_roll()
         self.current_hp = self.max_hp
         self.defence_point = self.level * self.dice_roll() + self.dice_roll() / 2
