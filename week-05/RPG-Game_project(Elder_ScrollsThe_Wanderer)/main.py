@@ -20,7 +20,7 @@ class Game:
         # self.my_view.monster_drawer(self.my_view.boss_counter, self.my_view.boss, self.my_view.boss_pic)
         self.spawn_skeletons(self.number_of_skeletons)
         self.my_view.draw_statusbar()
-
+        self.my_view.draw_entity(self.skeleton_list, self.my_view.skeleton_pic)
         self.my_view.display()
 
     def spawn_skeletons(self, number_of_skeletons):
@@ -31,5 +31,7 @@ class Game:
                 skeleton = Skeleton(coord_x, coord_y)
                 self.skeleton_list.append(skeleton)
                 self.counter += 1
+
+
 
 game = Game(3)

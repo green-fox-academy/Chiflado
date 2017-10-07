@@ -41,18 +41,11 @@ class Viewer:
         self.canvas.create_image(self.field_size / 2 + row * self.field_size, 
         self.field_size / 2 + column * self.field_size, image = image)
 
-    def draw_entity(self, enemy, image, x, y):
-        x = self.field_size * x + self.field_size / 2
-        y = self.field_size * y + self.field_size / 2
-        enemy.entity = self.canvas.create_image(x, y, image = image)
-
-    def monster_drawer(self, enemy, enemy_shape, image):    
-        while enemy < 1:
-            self.monster_x = randint(0, 9)
-            self.monster_y = randint(0, 9)
-            if self.my_map.get_cell(self.monster_x, self.monster_y) == True:
-                self.draw_entity(enemy_shape, image, self.monster_x, self.monster_y)
-                enemy += 1
+    def draw_entity(self, enemy_list, image):
+        for entity in enemy_list:
+            x = entity.coord_x * self.field_size + 36
+            y = entity.coord_y * self.field_size + 36
+            entity.entity = self.canvas.create_image(x, y, image = image)
 
     def draw_hero(self, image, x, y):
         x = self.field_size / 2
