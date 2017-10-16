@@ -1,7 +1,7 @@
 
 .container{
     display: flex;
-    width: 760px;
+    width: 100%;
 }
 
 .green {
