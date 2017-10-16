@@ -1,0 +1,13 @@
+
+
+.layout{
+    display: flex;
+    width: 685px;
+    margin: 0 auto;
+}
+
+header{
+    background: cyan;
+    width: 100%;
+    height: 100px;
+}
