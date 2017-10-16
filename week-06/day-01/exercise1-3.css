@@ -1,14 +1,13 @@
 
 .container{
     display: flex;
-    width: 100%;
+    width: 380%;
 }
 
 .green {
     background: green;
     height: 190px;
     flex-grow: 1;
-    pos
 }
 
 .yellow {

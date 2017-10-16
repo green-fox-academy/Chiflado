@@ -1,27 +1,26 @@
 
 .container{
     display: flex;
-    width: 100%;
+    width: 380px;
+    height: 505px;
+    flex-direction: column;
 }
 
 .green {
     background: green;
-    height: 190px;
-    flex-grow: 1;
+    flex-grow: 1;    
 }
 
 .yellow {
     background: yellow;
-    height: 190px;
     flex-grow: 2;
 }
 
 .purple {
     background: purple;
-    height: 190px;
     flex-grow: 1;
 }
 
-.green{order: 2;}
-.yellow{order: 1;}
-.purple{order: 0;}
+.green{order: 0;}
+.yellow{order: 2;}
+.purple{order: 1;}
