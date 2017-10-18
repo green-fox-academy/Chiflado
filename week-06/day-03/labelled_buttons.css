@@ -17,3 +17,11 @@ body{
 i{
     padding: 8px;
 }
+
+.trash:hover{
+    color: #F34541
+}
+
+.check:hover{
+    color: #38BA7D
+}
