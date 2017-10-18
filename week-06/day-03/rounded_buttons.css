@@ -41,3 +41,7 @@ body{
 .button:hover {
     filter: brightness(110%);
   }
+
+.button:active {
+    filter: brightness(90%);
+  }
