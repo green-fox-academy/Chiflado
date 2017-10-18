@@ -1,0 +1,34 @@
+
+body{
+    background: #2F3060;
+}
+
+.buttons{
+    display: flex;
+    margin: 100px auto;
+    color: white;
+    justify-content: space-between;
+    max-width: 500px;
+}
+
+.button{
+    display: flex;
+    width: 140px;
+    height: 55px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.red{
+    background: red;
+}
+
+.white{
+    background: white;
+    color: grey;
+}
+
+.black{
+    background: black;
+}
