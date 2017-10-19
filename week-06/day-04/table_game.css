@@ -14,9 +14,12 @@
     align-items: center;
 }
 
+p{
+    margin: 0;
+}
+
 .field_text{
     font-size: 36px;
-    margin: 0;
     transform: rotate(45deg);
 }
 
@@ -24,14 +27,16 @@
     background: #51D400;
     grid-column: 2/7;
     grid-row: 2/6;
+    box-shadow: inset 0px 0px 30px 0px rgba(115,113,115,1);
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 2fr 1fr;
     padding: 20px;
+    font-size: 30px;
     grid-template-areas: 
-                ". ."
-                "title cards"
-                ". ."
+    ". ."
+    "title cards"
+    ". ."
 }
 
 .title_text{
@@ -45,3 +50,8 @@
     background: #B02AFF;
 }
 
+.little_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
