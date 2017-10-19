@@ -1,0 +1,35 @@
+.header {
+    position: fixed;
+    background: #B02AFF;
+    height: 80px;
+    width: 100%;
+}
+
+.nav_links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 400px;
+    margin: 25px auto;
+}
+
+.link{
+    height: 30px;
+    background: #2AEAFF;
+}
+
+.first{
+    width: 85px;
+}
+
+.second{
+    width: 100px;
+}
+
+.third{
+    width: 90px;
+}
+
+.fourth{
+    width: 75px;
+}
