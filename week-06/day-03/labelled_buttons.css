@@ -4,6 +4,7 @@ body{
 }
 
 .button{
+    position: absolute;
     display: block;
     color: white;
     background: #1C242B;
@@ -19,9 +20,9 @@ i{
 }
 
 .trash:hover{
-    color: #F34541
+    color: #F34541;
 }
 
 .check:hover{
-    color: #38BA7D
+    color: #38BA7D;
 }
