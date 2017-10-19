@@ -1,8 +1,6 @@
-body{
-    background: #333333;
-}
 
 .container{
+    background: #333333;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 3;
@@ -19,12 +17,17 @@ body{
 }
 
 .green{
+    display: flex;
     background: #51D400;
     grid-area: big_green;
+    justify-content: center;
+    align-items: center;
 }
 
 .yellow{
     background: #FFD62A;
+    width: 80%;
+    height: 70%;
 }
 
 .one{
