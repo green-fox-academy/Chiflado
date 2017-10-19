@@ -8,15 +8,15 @@
 
 .nav_links{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 400px;
+    align-items: flex-start;
+    max-width: 700px;
     margin: 25px auto;
 }
 
 .link{
     height: 30px;
     background: #2AEAFF;
+    margin-right: 15px;
 }
 
 .first{
