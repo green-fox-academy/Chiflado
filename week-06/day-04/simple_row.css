@@ -8,13 +8,14 @@ body{
     height: 180px;
     color: white;
     grid-gap: 10px;
-    font-size: 36px;
+    font-size: 34px;
 }
 
 div{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: sans-serif;
 }
 
 .left, .right{
