@@ -8,10 +8,17 @@ body{
     height: 180px;
     color: white;
     grid-gap: 10px;
+    font-size: 36px;
+}
+
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .left, .right{
-    background: #FFD62A
+    background: #FFD62A;
 }
 
 .center{
