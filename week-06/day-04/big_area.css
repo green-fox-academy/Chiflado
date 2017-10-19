@@ -1,0 +1,48 @@
+body{
+    background: #333333;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 3;
+    grid-gap: 10px;
+    height: 420px;
+    grid-template-areas: 
+            "one big_green big_green"
+            "two big_green big_green"
+            "three four five"
+}
+
+.purple{
+    background: #B02AFF;
+}
+
+.green{
+    background: #51D400;
+    grid-area: big_green;
+}
+
+.yellow{
+    background: #FFD62A;
+}
+
+.one{
+    grid-area: one;
+}
+
+.two{
+    grid-area: two;
+}
+
+.three{
+    grid-area: three;
+}
+
+.four{
+    grid-area: four;
+}
+
+.five{
+    grid-area: five;
+} 
