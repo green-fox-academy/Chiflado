@@ -8,8 +8,8 @@
 }
 
 .header_logo{
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     border-right: 1px solid #a5a5a5;
 }
 
@@ -18,12 +18,12 @@
     text-decoration: none;
 }
 .nav_buttons a{
-    padding: 30px 20px;
+    padding: 30px 15px;
     transition: 1s;
 }
 
 .nav_buttons a:hover{
-    background: #a5a5a5;
+    background: #707070;
 }
 
 .shopping_cart{
