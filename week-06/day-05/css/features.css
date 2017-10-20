@@ -18,7 +18,55 @@
     background: #1f1f1f;
     height: 720px;
     width: 100%;
-    grid-area: feature_article
+    grid-area: feature_article;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.feature_article h2{
+    margin-left: 30px; 
+    color: #7f7f7f;
+    font-size: 16px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+.feature_article h1{
+    margin-top: 0px;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    padding-bottom: 30px;
+    width: 150px;
+    border-bottom: 4px solid white;
+    font-size: 50px;
+    color: white;
+    font-family: 'Patua One', cursive;
+}
+
+.article_text{
+    margin-left: 30px;
+    margin-bottom: 30px;
+    width: 250px;
+    color: white;
+    font-size: 12px;
+}
+
+.feature_article a{
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 300px;
+    margin-left: 30px;
+}
+
+.feature_article a p{
+    margin-bottom: 0;
+    font-size: 20px;
+    color: white;
+    padding-right: 60px;
 }
 
 .page{
