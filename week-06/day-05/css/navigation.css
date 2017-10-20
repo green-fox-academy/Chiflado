@@ -12,3 +12,14 @@
     height: 70px;
     border-right: 1px solid #a5a5a5;
 }
+
+.nav_buttons a{
+    padding: 35px 20px;
+    text-decoration: none;
+    color: #1f1f1f;  
+}
+
+.nav_buttons a:hover{
+    background: #a5a5a5;
+}
+
