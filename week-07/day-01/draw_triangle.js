@@ -14,7 +14,6 @@ var lineCount = 4;
 
 let star = '*'
 
-for (let i = 0; i < lineCount; star += '*'){
-    console.log(star)
-     i += 1
+for (let i = 0; i < lineCount; i += 1){
+    console.log(star.repeat(i+1))
 }
