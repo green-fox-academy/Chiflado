@@ -8,7 +8,11 @@
 let al = 'GreenFox';
 
 function greet(input){
-    return 'Greetings, dear ' + input
+    if (input == undefined){
+        return 'There is no input'
+    } else{
+        return 'Greetings, dear ' + input
+    }
 }
 
 console.log(greet(al));
