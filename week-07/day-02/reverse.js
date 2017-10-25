@@ -9,3 +9,13 @@
 let aj = [3, 4, 5, 6, 7];
 
 console.log(aj.reverse());
+
+function reverse(items){
+    var reversed = Array();
+    for( let key in items ){
+        reversed.push(items[key]);
+    }
+    return reversed;
+}
+ 
+console.log(reverse(aj));
