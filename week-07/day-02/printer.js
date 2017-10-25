@@ -8,4 +8,4 @@ function printer(...arg){
     console.log(...arg);
 }
 
-printer('cica', 11, true)
+printer('cica', 11, true, 'peeeenz')
