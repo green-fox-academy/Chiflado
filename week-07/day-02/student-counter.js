@@ -23,5 +23,15 @@ function candyCounter(input){
     }
 }
 
+function sumOfThePoorKidsAge(input){
+    let sum = 0;
+    for (let i in input){
+        if (input[i]['candies'] < 5){
+            sum += input[i]['age'];
+        }
+    }
+    console.log('The sum of ages the kids whos has less than 5 candies is: ' + sum);
+}
 
 candyCounter(students);
+sumOfThePoorKidsAge(students);
