@@ -24,4 +24,15 @@ function findTheRichKids(input){
     }
 }
 
+function averageCandy(input){
+    let candies = 0;
+    let counter = 0;
+    for (let i in input){
+        candies += input[i]['candies'];
+        counter += 1;
+    }
+    console.log(candies / counter);
+}
+
 findTheRichKids(students);
+averageCandy(students);
