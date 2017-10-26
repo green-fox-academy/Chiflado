@@ -13,3 +13,4 @@ secondButton.addEventListener('mouseover', disableButton);
 function disableButton(){
   alert('Don\'t even try click, this button is disable');
 }
+secondButton.innerText = 'Don\'t click me!';
