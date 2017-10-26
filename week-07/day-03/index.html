@@ -2,15 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>DOM: Element Attributes</title>
+  <title>DOM: ClassList</title>
 </head>
 <body>
-  <img src="https://s-media-cache-ak0.pinimg.com/736x/8d/6c/72/8d6c72e14ca68b619860a665f0a81479.jpg">
+  <div class="asteroid b325">an asteroid</div>
+
   <script>
-  'use strict';
-  var littlePrince = document.querySelector('img');
-  console.log('original image:', littlePrince.getAttribute('src'));
-  littlePrince.setAttribute('src', 'http://deji.chez.com/dessins/pp1.gif');
+    'use strict';
+    var asteroid = document.querySelector('div');
+    console.log(asteroid.classList.value);
+    console.log('asteroid?', asteroid.classList.contains('asteroid'));
+    console.log('planet?', asteroid.classList.contains('planet'));
+    asteroid.classList.add('new-class');
+    asteroid.classList.remove('asteroid');
+    console.log('still asteroid?', asteroid.classList.contains('asteroid'));
   </script>
 </body>
 </html>
