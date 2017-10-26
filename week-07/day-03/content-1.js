@@ -18,4 +18,6 @@ heading.addEventListener('click', alertMessage);
 logText(firstParagraph);
 secondParagraph.addEventListener('click', alertMessage);
 heading.innerText = 'New Content';
-thirdParagraph.innerText = firstParagraph.innerText;
+let temp = firstParagraph.innerText;
+firstParagraph.innerText = thirdParagraph.innerText;
+thirdParagraph.innerText = temp;
