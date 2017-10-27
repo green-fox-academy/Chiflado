@@ -10,6 +10,7 @@ let imagesData = [{'source':'url(https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/1
 ]
 
 let images = document.querySelectorAll('.image');
+let mainScreen = document.querySelector('.screen');
 
 function setThumbNails(){
     for (let i in images){
@@ -18,4 +19,10 @@ function setThumbNails(){
     }
 };
 
+function setMainImage(){
+    mainScreen.style.background = imagesData[0]['source'];
+    mainScreen.style.backgroundSize = 'cover';
+}
+
+setMainImage();
 setThumbNails();
