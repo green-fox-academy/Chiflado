@@ -1,0 +1,27 @@
+
+body{
+    background: #ADA996; 
+    background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+    background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.container{
+    display: flex;
+    height: 360px;
+    width: 740px;
+}
+
+.button{
+    height: 100%;
+    width: 50px;
+    border: 1px solid black;    
+}
+
+.screen{
+    height: 100%;
+    width: 640px;
+    border: 1px solid black;
+}
