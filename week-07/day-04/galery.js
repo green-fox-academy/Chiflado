@@ -13,16 +13,16 @@ let images = document.querySelectorAll('.image');
 let mainScreen = document.querySelector('.screen');
 
 function setThumbNails(){
-    for (let i in images){
-        images[i].style.background = (imagesData[i]['source']);
-        images[i].style.backgroundSize = 'cover';    
+    for (let i = 0; i < images.length; i++){
+        images[i].setAttribute('style', 'background:' + imagesData[i]["source"] + '; background-size: cover;');    
     }
 };
 
 function setMainImage(){
-    mainScreen.style.background = imagesData[0]['source'];
-    mainScreen.style.backgroundSize = 'cover';
+    mainScreen.setAttribute('style', 'background:' + imagesData[0]["source"] + '; background-size: cover;');
 }
+
+
 
 setMainImage();
 setThumbNails();
