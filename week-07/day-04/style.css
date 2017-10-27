@@ -12,6 +12,7 @@ body{
     display: flex;
     height: 360px;
     width: 740px;
+    margin: 20px 0px;
 }
 
 .button{
@@ -23,5 +24,19 @@ body{
 .screen{
     height: 100%;
     width: 640px;
+    border: 1px solid black;
+}
+
+.thumbnails{
+    width: 740px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;  
+}
+
+.image{
+    width: 80px;
+    height: 80px;
     border: 1px solid black;
 }
