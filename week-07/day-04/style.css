@@ -18,13 +18,18 @@ body{
 .button{
     height: 100%;
     width: 50px;
-    border: 1px solid black;    
+    border: 1px solid black;
+    background: #ECE9E6;
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+    
 }
 
 .screen{
     height: 100%;
     width: 640px;
     border: 1px solid black;
+    background-size: cover;
 }
 
 .thumbnails{
@@ -35,8 +40,9 @@ body{
     align-items: center;  
 }
 
+
 .image{
     width: 80px;
     height: 80px;
-    border: 1px solid black;
+    border: 5px solid white;
 }
