@@ -22,7 +22,5 @@ function setMainImage(){
     mainScreen.setAttribute('style', 'background:' + imagesData[0]["source"] + '; background-size: cover;');
 }
 
-
-
 setMainImage();
 setThumbNails();
