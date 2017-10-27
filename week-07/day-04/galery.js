@@ -15,7 +15,7 @@ let mainScreen = document.querySelector('.screen');
 function setThumbNails(){
     for (let i in images){
         images[i].style.background = (imagesData[i]['source']);
-        images[i].style.backgroundSize = '200%';    
+        images[i].style.backgroundSize = 'cover';    
     }
 };
 
