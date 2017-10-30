@@ -1,0 +1,38 @@
+
+.mainBox{
+    width: 600px;
+    height: 400px;
+    background: tomato;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "switch levels"
+    "people levels"
+}
+
+.switch{
+    grid-area: switch;
+}
+
+.people{
+    grid-area: people;
+}
+
+.levels{
+    grid-area: levels;
+}
+
+.buttons{
+    display: flex;
+    flex-flow: column;
+}
+
+button{
+    width: 150px;
+    margin-left: 75px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
