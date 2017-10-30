@@ -38,8 +38,9 @@ var ferrari = {
 function refuel(liters) {
   this.fuel += liters
 }
-
-
+let refuelFerrari = refuel.bind(ferrari);
+refuelFerrari(52);
+console.log(ferrari.fuel);
 
 
 
