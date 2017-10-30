@@ -11,7 +11,12 @@ class Sharpie{
     }
 }
 
-let redSharpie = new Sharpie('red', 2);
+let redSharpie = new Sharpie('red', 3);
 
-redSharpie.use();
-console.log(redSharpie.inkAmount);
+while (redSharpie.inkAmount > 0){
+    redSharpie.use();
+    if (redSharpie.inkAmount < 0){
+        redSharpie.inkAmount = 0;
+    }
+    console.log(redSharpie.inkAmount);
+}
