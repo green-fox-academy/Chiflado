@@ -4,7 +4,6 @@
     height: 400px;
     background: tomato;
     display: grid;
-    justify-content: center;
     align-items: center;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -39,7 +38,7 @@ button{
 
 .levels{
     display: flex;
-    flex-flow: column;
+    flex-flow: column-reverse;
 }
 
 .floor{
@@ -48,4 +47,11 @@ button{
     margin-left: 100px;
     background: white;
     border: 1px solid black;
+}
+
+.active{
+    background: green;
+    text-align: center;
+    color: white;
+    font-size: 30px;
 }
