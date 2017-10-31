@@ -11,8 +11,12 @@ function prison(name){
     var visits = 0;
     var functions = {
         visit: function(){
+            if(inmate === ''){
+                console.log('Nobody is here anymore');
+            }else{
             visits++;
-            console.log(inmate + ' is visited ' + visits + ' time(s)');   
+            console.log(inmate + ' is visited ' + visits + ' time(s)');  
+            } 
         },
         escape: function(){
             console.log('BREAKING NEWS, ' + name + ' escaped the prison');
