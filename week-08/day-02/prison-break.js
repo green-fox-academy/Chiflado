@@ -13,6 +13,10 @@ function prison(name){
         visit: function(){
             visits++;
             console.log(inmate + ' is visited ' + visits + ' time(s)');   
+        },
+        escape: function(){
+            console.log('BREAKING NEWS, ' + name + ' escaped the prison');
+            inmate = '';
         }
     }
     return functions;
@@ -23,5 +27,5 @@ const alcatraz = prison('Sad Panda');
 
 alcatraz.visit() // Sad Panda is visited 1 time(s)
 alcatraz.visit() // Sad Panda is visited 2 time(s)
-// alcatraz.escape() // BREAKING NEWS, Sad Panda escaped the prison
-// alcatraz.visit() // Nobody is here anymore
+alcatraz.escape() // BREAKING NEWS, Sad Panda escaped the prison
+alcatraz.visit() // Nobody is here anymore
