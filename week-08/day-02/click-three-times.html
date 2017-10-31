@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple button</title>
+    
+</head>
+<body>
+        <button class="button">Much Very Button</button>
+        <div class="text"></div>
+    <script>
+    var itIsReady = false; 
+    setTimeout( function(){
+        itIsReady = true;
+    }, 5000);
+        var counter = 1;
+        function ClickOn(){
+            if (counter === 3){
+                document.querySelector('.text').innerHTML ="5 seconds ellapsed and clicked " + counter +" times";
+            }
+        }
+        document.querySelector('.button').addEventListener('click', function(){
+            if (itIsReady) {
+                ClickOn();
+                counter++; 
+            }
+        });   
+    </script>
+</body>
+</html>
