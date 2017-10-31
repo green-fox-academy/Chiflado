@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Delayed Button</title>
+</head>
+<body>
+    <button class="button">Very Button</button>
+    <div class="text"></div>
+    <script>
+        function delay(){
+            setTimeout(function(){
+                document.querySelector('.text').innerHTML = '2 seconds ellapsed';
+            }, 2000);
+        }
+        document.querySelector('.button').addEventListener('click', delay);
+    </script>
+</body>
+</html>
