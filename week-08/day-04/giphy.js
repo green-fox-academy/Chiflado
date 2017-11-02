@@ -14,7 +14,9 @@ function getGIF(callback){
 };
 
 function showThumbnails(jsonData){
-    thumbnails[0].setAttribute('style', 'background: url('+jsonData.data[0].images.fixed_height.url+'); background-size: cover');
+    for(let i = 0; i < thumbnails.length; i++){
+        thumbnails[i].setAttribute('style', 'background: url('+jsonData.data[i].images.fixed_height.url+'); background-repeat: no-repeat; background-postion: center');
+    }
 };
 
 getGIF(showThumbnails);
