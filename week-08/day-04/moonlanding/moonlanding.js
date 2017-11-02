@@ -12,23 +12,23 @@ function getArticle(callback){
 }
 
 function renderArticle(input){
-    let h1 = document.createElement('h1');
-    let snippet = document.createElement('article');
-    let pubDate = document.createElement('p');
-    let permalink = document.createElement('a');
-
-    h1.textContent = input.response.docs[5].headline.main;
-    snippet.textContent = input.response.docs[5].snippet;
-    permalink.textContent = 'Read More';
-    permalink.href = input.response.docs[5].web_url;
-    pubDate.textContent = 'Published: ' + input.response.docs[5].pub_date;
-
-    document.body.appendChild(h1);
-    document.body.appendChild(snippet);
-    document.body.appendChild(permalink);
-    document.body.appendChild(pubDate);
-
-
+    for (let i = 0; i < 10; i++){
+        let h1 = document.createElement('h1');
+        let snippet = document.createElement('article');
+        let pubDate = document.createElement('p');
+        let permalink = document.createElement('a');
+        
+        h1.textContent = input.response.docs[i].headline.main;
+        snippet.textContent = input.response.docs[i].snippet;
+        permalink.textContent = 'Read More';
+        permalink.href = input.response.docs[i].web_url;
+        pubDate.textContent = 'Published: ' + input.response.docs[i].pub_date;
+        
+        document.body.appendChild(h1);
+        document.body.appendChild(snippet);
+        document.body.appendChild(permalink);
+        document.body.appendChild(pubDate);   
+    }
 }
 
 getArticle(renderArticle);
