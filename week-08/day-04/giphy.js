@@ -2,7 +2,7 @@
 
 let thumbnails = document.querySelectorAll('div');
 
-function getGIF(callback, clickCallback){
+function getGIF(callback){
     let xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://api.giphy.com/v1/gifs/search?api_key=lTIMCZkccb0VcetN359mqKfkXkdKNHI9&q=starwars&limit=16&offset=16&rating=R&lang=en');
     xhr.onload = function(){
@@ -17,8 +17,8 @@ function showThumbnails(jsonData){
         thumbnails[i].setAttribute('style', 'background: url('+jsonData.data[i].images.fixed_height_still.url+');' 
         + 'background-repeat: no-repeat; background-postion: center');
         thumbnails[i].addEventListener('click', function(){
-        thumbnails[i].setAttribute('style', 'background: url('+jsonData.data[i].images.fixed_height.url+');' 
-        + 'background-repeat: no-repeat; background-postion: center')
+            thumbnails[i].setAttribute('style', 'background: url('+jsonData.data[i].images.fixed_height.url+');' 
+            + 'background-repeat: no-repeat; background-postion: center')
         });
     }
 };
