@@ -1,30 +1,43 @@
-'use strict'
+'use strict';
 
 let postContainer = document.querySelector('.post_container');
 
-function createPost(){
-    let createPost = document.createElement('article');
-    let createDiv = document.createElement('div');
-    let createH1 = document.createElement('h1');
-    let createButton = document.createElement('button');
-    let post = createPost;
+function createPost(object){
+    let postElements =`<div class="votes">
+                        <div class="upvote"></div>
+                        <div class="counter">${object.score}</div>
+                        <div class="downvote"></div>
+                        </div>
+                        <h1 class="content">${object.title}</h1>`;
+    let post = document.createElement('article')
     post.className = 'post';
+    post.innerHTML = postElements;
     postContainer.appendChild(post);
+    return post;
 }
 
 
 function doRequest(callback) {
     var x = new XMLHttpRequest();
-    x.open('GET', 'https://cors-anywhere.herokuapp.com/http://secure-reddit.herokuapp.com/posts');
+    x.open('GET', 'http://secure-reddit.herokuapp.com/simple/posts');
     x.onload = function() {
-        let posts = JSON.parse(x.responseText);
-        callback(posts)
+        let data = JSON.parse(x.responseText);
+        callback(data)
     };
     x.send();
+  }
+
+  function renderPosts(data){
+      for(let i = 0; i < data.posts.length; i++){
+          let postDom = createPost(data.posts[i]);
+          let upvote = postDom.querySelector('.upvote')
+          console.log(upvote);          
+      }
   }
 
   function handleData(data){
     console.log(data);
   }
-  createPost();
-  doRequest(handleData);
+
+doRequest(handleData);
+doRequest(renderPosts);

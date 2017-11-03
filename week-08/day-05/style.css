@@ -22,7 +22,6 @@ header{
 main{
     display: flex;
     justify-content: space-between;
-    /* flex-flow: column; */
     margin: 20px 0;
 }
 
@@ -34,7 +33,7 @@ main{
 
 .post{
     display: flex;
-    background: tomato;
+    background: white;
     height: 130px;
     margin-bottom: 20px;
     
@@ -59,6 +58,7 @@ main{
 
 .counter{
     background: red;
+    color: darkgrey;
     font-size: 36px;
     height: 33%;
     text-align: center;
