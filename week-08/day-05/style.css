@@ -1,0 +1,25 @@
+
+
+body{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    background: #EEEEEE;
+    margin: 0;
+    width: 80%;
+    margin-left: 10%;
+}
+
+header{
+    height: 250px;
+    background: url("https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/13043558_10206566541949981_6049452993740991625_n.jpg?oh=7f820a0102f7b384eb95addb3a7233b2&oe=5AA3CF0E");
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+main{
+    background: tomato;
+    height: 100px;
+    margin: 20px 0;
+}
