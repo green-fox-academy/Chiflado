@@ -18,8 +18,31 @@ header{
     background-size: 100%;
 }
 
-main{
+.post{
+    display: flex;
     background: tomato;
-    height: 100px;
+    height: 130px;
     margin: 20px 0;
+}
+
+.votes{
+    display: flex;
+    flex-flow: column;
+    background: blue;
+    width: 10%;
+}
+
+.upvote{
+    background: green;
+    height: 33%;
+}
+
+.counter{
+    background: red;
+    height: 33%;
+}
+
+.downvote{
+    background: purple;
+    height: 33%;
 }
