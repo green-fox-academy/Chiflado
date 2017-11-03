@@ -11,6 +11,7 @@ function createPost(object){
                         <a class="content", href="${object.url}">${object.title}</a>`;
     let post = document.createElement('article')
     post.className = 'post';
+    post.dataset.ID = object.id;
     post.innerHTML = postElements;
     postContainer.appendChild(post);
     return post;

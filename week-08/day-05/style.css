@@ -27,7 +27,7 @@ main{
 
 .post_container{
     display: flex;
-    flex-flow: column;
+    flex-flow: column-reverse;
     width: 65%;
 }
 
