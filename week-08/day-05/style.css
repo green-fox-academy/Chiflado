@@ -18,11 +18,17 @@ header{
     background-size: 100%;
 }
 
+main{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
 .post{
     display: flex;
     background: tomato;
+    width: 65%;
     height: 130px;
-    margin: 20px 0;
 }
 
 .votes{
@@ -45,4 +51,15 @@ header{
 .downvote{
     background: purple;
     height: 33%;
+}
+
+.left_container{
+    background: blue;
+    height: 400px;
+    width: 33%;
+}
+
+.submit{
+    width: 100%;
+    height: 40px;
 }
