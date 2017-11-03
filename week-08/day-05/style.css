@@ -8,6 +8,7 @@ body{
     margin: 0;
     width: 80%;
     margin-left: 10%;
+    font-family: 'Lato';
 }
 
 header{
@@ -21,14 +22,27 @@ header{
 main{
     display: flex;
     justify-content: space-between;
+    /* flex-flow: column; */
     margin: 20px 0;
+}
+
+.post_container{
+    display: flex;
+    flex-flow: column;
+    width: 65%;
 }
 
 .post{
     display: flex;
     background: tomato;
-    width: 65%;
     height: 130px;
+    margin-bottom: 20px;
+    
+}
+
+.content{
+    padding-left: 10px;
+    color: #8C8C8C;
 }
 
 .votes{
@@ -45,7 +59,9 @@ main{
 
 .counter{
     background: red;
+    font-size: 36px;
     height: 33%;
+    text-align: center;
 }
 
 .downvote{
