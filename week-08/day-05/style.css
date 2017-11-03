@@ -33,21 +33,23 @@ main{
 
 .post{
     display: flex;
-    background: white;
     height: 130px;
     margin-bottom: 20px;
     
 }
 
 .content{
-    padding-left: 10px;
+    padding: 20px;
+    width: 100%;
+    background: white;    
     color: #8C8C8C;
+    font-size: 30px;
 }
 
 .votes{
     display: flex;
+    background: white;
     flex-flow: column;
-    background: blue;
     width: 10%;
 }
 
@@ -57,7 +59,6 @@ main{
 }
 
 .counter{
-    background: red;
     color: darkgrey;
     font-size: 36px;
     height: 33%;

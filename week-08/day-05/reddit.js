@@ -8,7 +8,7 @@ function createPost(object){
                         <div class="counter">${object.score}</div>
                         <div class="downvote"></div>
                         </div>
-                        <h1 class="content">${object.title}</h1>`;
+                        <a class="content", href="${object.url}">${object.title}</a>`;
     let post = document.createElement('article')
     post.className = 'post';
     post.innerHTML = postElements;
