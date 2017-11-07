@@ -20,3 +20,12 @@ test('empty list', function (t) {
     t.equal(actual, expected);
     t.end();
   });
+
+test('sum of list', function (t) {
+    var list = [3];
+    var actual = sum(list);
+    var expected = 3;
+
+    t.equal(actual, expected);
+    t.end();
+});
