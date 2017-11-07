@@ -2,4 +2,4 @@ function getApple(){
     return 'apple'
 }
 
-console.log(getApple());
+module.exports = getApple;
