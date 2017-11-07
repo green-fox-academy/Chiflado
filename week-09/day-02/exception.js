@@ -19,3 +19,9 @@ let  addString = function(str1, str2, printStr){
 let printStr = function(str) {
   console.log(str);
 }
+
+try{
+    addString(1234, 56789, 'printStr');
+} catch(err){
+    console.log(err.message);
+}
