@@ -3,9 +3,9 @@
 var url = 'http://localhost:3000/';
 
 let listContainer = document.createElement('ul');
-document.querySelector('body').appendChild(listContainer);
 
 function createList(data){
+    document.querySelector('body').appendChild(listContainer);
     for(let i = 0; i<data.length; i++){
         let bookName = document.createElement('li');
         bookName.innerText = data[i].book_name;
