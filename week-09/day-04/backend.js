@@ -16,10 +16,10 @@ app.get('/', function(req, res){
 
 var connection = mysql.createConnection({
                     host : 'localhost',
-                    class : 'bookstore',
                     user : 'root',
-                    password : 'root'
-                    });
+                    password : 'root',
+                    database : 'bookstore'
+                });
 
 connection.connect(function(err){
     if(err){
@@ -27,6 +27,10 @@ connection.connect(function(err){
     }
     console.log("Connection established");
     });
+
+connection.query('SELECT * FROM book_mast;', function(err, data){
+    console.log(data);
+})
 
 app.listen(port);
 console.log('the server run at: http://localhost:' + port);
