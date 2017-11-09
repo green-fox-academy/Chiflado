@@ -2,6 +2,17 @@
 
 var url = 'http://localhost:3000/';
 
+let listContainer = document.createElement('ul');
+document.querySelector('body').appendChild(listContainer);
+
+function createList(data){
+    for(let i = 0; i<data.length; i++){
+        let bookName = document.createElement('li');
+        bookName.innerText = data[i].book_name;
+        listContainer.appendChild(bookName);
+    }
+};
+
 function ajaxCall(command, endPoint, callback){
     let xhr = new XMLHttpRequest();
     xhr.open(command, url + endPoint);
@@ -12,3 +23,10 @@ function ajaxCall(command, endPoint, callback){
     xhr.send();
 };
 
+function handleData(data){
+    console.log(data);
+}
+
+
+ajaxCall('GET', 'book_titles', handleData);
+ajaxCall('GET', 'book_titles', createList);
