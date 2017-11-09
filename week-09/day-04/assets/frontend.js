@@ -2,9 +2,9 @@
 
 var url = 'http://localhost:3000/';
 
-let listContainer = document.createElement('ul');
 
 function createList(data){
+    let listContainer = document.createElement('ul');
     document.querySelector('body').appendChild(listContainer);
     for(let i = 0; i<data.length; i++){
         let bookName = document.createElement('li');
@@ -28,5 +28,5 @@ function handleData(data){
 }
 
 
-ajaxCall('GET', 'book_titles', handleData);
+ajaxCall('GET', 'book_infos', handleData);
 ajaxCall('GET', 'book_titles', createList);
