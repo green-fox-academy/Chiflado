@@ -18,14 +18,14 @@ function createPost(object){
 }
 
 
-function doRequest(callback) {
-    var x = new XMLHttpRequest();
-    x.open('GET', 'http://secure-reddit.herokuapp.com/simple/posts');
-    x.onload = function() {
-        let data = JSON.parse(x.responseText);
-        callback(data)
+function doRequest(config) {
+    var xhr = new XMLHttpRequest();
+    xhr.open(config.method, config.url);
+    xhr.onload = function() {
+        let data = JSON.parse(xhr.responseText);
+        config.callback(data)
     };
-    x.send();
+    xhr.send();
   }
 
 function renderPosts(data){
@@ -40,5 +40,12 @@ function handleData(data){
     console.log(data);
 }
 
+const Config = {
+    url: 'http://secure-reddit.herokuapp.com/simple/posts',
+    method: 'GET',
+    callback: renderPosts,
+    data: null
+}
+
 doRequest(handleData);
-doRequest(renderPosts);
+doRequest(Config);

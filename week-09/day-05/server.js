@@ -1,6 +1,7 @@
 'use srtict';
 
 var express = require('express');
+var bodyParser = require('body-parser');
 var mysql = require('mysql');
 
 var port = 8080;
