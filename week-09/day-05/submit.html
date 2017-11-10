@@ -4,22 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>The Reddit Project</title>
     <link href="assets/style.css" rel="stylesheet">
     <style>@import url('https://fonts.googleapis.com/css?family=Lato:300');</style>
+    <title>Submit new post</title>
 </head>
 <body>
     <header></header>
     <main>
-        <div class="post_container">
-        </div>
-        <div class="left_container">
-            <a class="submitLink" href="submit.html">
-                <button class="submit">SUBMIT A NEW POST</button>
-            </a>
-            <div class="about"></div>
-        </div>
+        <section class="input">
+                <label for="title"><span>*</span>title</label>
+                <input type="text" id="title" name="title" required/>
+                <label for="url">URL</label>
+                <input type="text" id="url" name="url" required/>
+        </section>
+        <button class="submit newpost">SUBMIT</button>
     </main>
-    <script src="assets/reddit.js"></script>
+
 </body>
 </html>
