@@ -2,6 +2,13 @@
 
 let postContainer = document.querySelector('.post_container');
 
+const Config = {
+    url: 'http://secure-reddit.herokuapp.com/simple/posts',
+    method: 'GET',
+    callback: renderPosts,
+    data: null
+}
+
 function createPost(object){
     let postElements =`<div class="votes">
                         <div class="upvote"></div>
@@ -22,30 +29,48 @@ function doRequest(config) {
     var xhr = new XMLHttpRequest();
     xhr.open(config.method, config.url);
     xhr.onload = function() {
-        let data = JSON.parse(xhr.responseText);
-        config.callback(data)
+        config.data = JSON.parse(xhr.responseText);
+        console.log(config);
+        config.callback(config)
     };
-    xhr.send();
+    xhr.send(config.data);
   }
 
-function renderPosts(data){
-    for(let i = 0; i < data.posts.length; i++){
-        let postDom = createPost(data.posts[i]);
+function renderPosts(object){
+    for(let i = 0; i < object.data.posts.length; i++){
+        let postDom = createPost(object.data.posts[i]);
         let upvote = postDom.querySelector('.upvote')
         console.log(upvote);          
     }
 }
 
-function handleData(data){
-    console.log(data);
-}
+// var postData = {
+//     'title': '',
+//     'href': ''
+// };
 
-const Config = {
-    url: 'http://secure-reddit.herokuapp.com/simple/posts',
-    method: 'GET',
-    callback: renderPosts,
-    data: null
-}
+// const changeView = function() {
+//     window.location.href = '/'
+// }
 
-doRequest(handleData);
+// const submitConfig = {
+//     url: 'http://secure-reddit.herokuapp.com/simple/posts',
+//     method: 'POST',
+//     callback: changeView,
+//     data: null
+// }
+
+
+// document.querySelector('.submitPost').addEventListener('click', function(event) {
+//     event.preventDefault();
+//     postData.title = document.querySelector('#title').value;
+//     postData.href = document.querySelector('#url').value;
+//     if (postData.title) {
+//         Config.data = JSON.stringify(postData);
+//         doRequest(submitConfig);
+//     } else {
+//         alert("Missing title")
+//     }
+// })
+
 doRequest(Config);
