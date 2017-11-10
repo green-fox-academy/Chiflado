@@ -19,9 +19,5 @@ app.get('/submit.html', function(req, res){
     res.sendFile(__dirname + '/submit.html');
 });
 
-app.get('/index.html', function(req, res){
-    res.sendFile(__dirname + '/index.html');
-});
-
 app.listen(port);
 console.log('the server run at: http://localhost:' + port);

@@ -44,33 +44,32 @@ function renderPosts(object){
     }
 }
 
-// var postData = {
-//     'title': '',
-//     'href': ''
-// };
+var postData = {
+    'title': '',
+    'href': ''
+};
 
-// const changeView = function() {
-//     window.location.href = '/'
-// }
+const changeView = function() {
+    window.location.href = '/'
+}
 
-// const submitConfig = {
-//     url: 'http://secure-reddit.herokuapp.com/simple/posts',
-//     method: 'POST',
-//     callback: changeView,
-//     data: null
-// }
-
-
-// document.querySelector('.submitPost').addEventListener('click', function(event) {
-//     event.preventDefault();
-//     postData.title = document.querySelector('#title').value;
-//     postData.href = document.querySelector('#url').value;
-//     if (postData.title) {
-//         Config.data = JSON.stringify(postData);
-//         doRequest(submitConfig);
-//     } else {
-//         alert("Missing title")
-//     }
-// })
+const submitConfig = {
+    url: 'http://secure-reddit.herokuapp.com/simple/posts',
+    method: 'POST',
+    callback: changeView,
+    data: null
+}
 
 doRequest(Config);
+
+document.querySelector('.submitPost').addEventListener('click', function(event) {
+    event.preventDefault();
+    postData.title = document.querySelector('#title').value;
+    postData.href = document.querySelector('#url').value;
+    if (postData.title) {
+        Config.data = JSON.stringify(postData); 
+        doRequest(submitConfig);
+    } else {
+        alert("Missing title")
+    }
+})
