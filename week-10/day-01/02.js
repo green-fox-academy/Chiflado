@@ -7,7 +7,14 @@
 // Every rectangle should have a method called getCircumference() that returns its circumference
 
 const Rectangle = function(horizontalSide, verticalSide){
-    let horizontalSide = horizontalSide;
-    let verticalSide = verticalSide;
+    this.horizontalSide = horizontalSide;
+    this.verticalSide = verticalSide;
 }
 
+Rectangle.prototype.getArea = function(){
+    return this.horizontalSide * this.verticalSide
+}
+
+let veryCoolRectangle = new Rectangle(5, 7);
+
+console.log(veryCoolRectangle.getArea());
