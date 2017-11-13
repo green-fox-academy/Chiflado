@@ -20,3 +20,20 @@ const racoon = animal('LOL ima coon');
 dog.say();
 cat.say();
 racoon.say();
+
+
+
+const Animal = function (sound){
+    this.sound = sound
+}
+
+Animal.prototype.say = function(){
+    console.log(this.sound)
+}
+
+const horse = new Animal('I\'m amazing');
+const narwhal = new Animal('Swimming in the ocean');
+const badger = new Animal('mushroom mushroom');
+horse.say();
+narwhal.say();
+badger.say();
