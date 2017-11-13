@@ -15,6 +15,11 @@ Rectangle.prototype.getArea = function(){
     return this.horizontalSide * this.verticalSide
 }
 
+Rectangle.prototype.getCircumference = function(){
+    return 2 * (this.horizontalSide + this.verticalSide)
+}
+
 let veryCoolRectangle = new Rectangle(5, 7);
 
 console.log(veryCoolRectangle.getArea());
+console.log(veryCoolRectangle.getCircumference());
