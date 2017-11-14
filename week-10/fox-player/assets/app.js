@@ -12,12 +12,11 @@ let timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
 play.addEventListener('click',function(event){
     if(music.paused){
         music.play();
-        play.setAttribute('style', `background: url("assets/pause.svg"); 
-                                    background-repeat: no-repeat; background-position: center`)
+        play.className = "pause button"
     }
     else{
         music.pause();
-        play.setAttribute('style', 'background: url("assets/play.svg")')
+        play.className = "play button"
         
     }
 });
