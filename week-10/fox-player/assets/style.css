@@ -1,10 +1,53 @@
+
+#audio_player{
+  width: 60%;
+  height: 500px;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+            "logo tracklist"
+            "playlists tracklist"
+            "playlists tracklist"            
+            "control_panel control_panel"
+}
+
+.logo{
+  width: 100%;
+  height: 100px;
+  grid-area: logo;
+  background: green;
+}
+
+.FoxLogo{
+  width: 100px;
+  height: 100px;
+  background: url("foxplayer.png");
+  background-size: cover;
+}
+
+.playlists{
+  width: 100%;
+  height: 350px; 
+  background: tomato;
+  grid-area: playlists;
+}
+
+.tracklist{
+  width: 100%;
+  height: 450px; 
+  background: limegreen;
+  grid-area: tracklist  ;
+}
+
 #control_panel{
   display: flex;
   width: 100%;
   height: 50px;
   justify-content: space-between;
-  align-items: center;  
-  border: 1px solid black;
+  align-items: center;
+  grid-area: control_panel;
 }
 
 #buttons{

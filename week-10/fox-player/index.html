@@ -8,21 +8,28 @@
     <link href="assets/style.css" rel="stylesheet">
 </head>
 <body>
-    <div id="control_panel">
-        <audio src="music\Maxwell_Murder.mp3" controls></audio>
-        <div id="buttons">
-            <button class="rewind button"></button>
-            <button class="play button"></button>
-            <button class="forward button"></button>
+    <main id="audio_player">
+        <div class="logo">
+            <img class="FoxLogo">
         </div>
-        <div id="timeline">
-            <div id="playhead"></div>
+        <div class="playlists"></div>
+        <div class="tracklist"></div>
+        <div id="control_panel">
+            <audio src="music\Maxwell_Murder.mp3" controls></audio>
+            <div id="buttons">
+                <button class="rewind button"></button>
+                <button class="play button"></button>
+                <button class="forward button"></button>
+            </div>
+            <div id="timeline">
+                <div id="playhead"></div>
+            </div>
+            <div id="volume_control">
+                <img class="sound">
+                <input type="range" class="volume" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)">
+            </div>
         </div>
-        <div id="volume_control">
-            <img class="sound">
-            <input type="range" class="volume" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)">
-        </div>
-    </div>
+    </main>
     <script src="assets/app.js"></script>
 </body>
 </html>
