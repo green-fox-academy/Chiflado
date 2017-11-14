@@ -4,7 +4,8 @@ let music = document.querySelector('audio');
 let play = document.querySelector('.play');
 let playhead = document.querySelector('#playhead');
 let timeline = document.querySelector('#timeline'); 
-let volume = document.querySelector('.volume'); 
+let volume = document.querySelector('.volume');
+let mute = document.querySelector('.sound'); 
 let duration = music.duration;
 let timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
 
@@ -22,10 +23,19 @@ play.addEventListener('click',function(event){
 });
 
 function SetVolume(val){
-    console.log('Before: ' + music.volume);
     music.volume = val / 100;
-    console.log('After: ' + music.volume);
 }
+
+mute.addEventListener('click', function(event) {
+    event = event || window.event;
+    music.muted = !music.muted;
+    event.preventDefault();
+    if(music.muted){
+        mute.className += " mute"
+    }else{
+        mute.className = "sound"
+    }
+})
 
 music.addEventListener("timeupdate", timeUpdate);
 

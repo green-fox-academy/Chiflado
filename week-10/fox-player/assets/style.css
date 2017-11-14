@@ -63,6 +63,11 @@
   background-repeat: no-repeat;
 }
 
+.mute{
+  background: url("mute.png");
+  background-size: cover;
+}
+
 #volume_control{
   margin:auto;
   width:50%;
