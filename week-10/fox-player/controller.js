@@ -15,3 +15,11 @@ let addPlaylist = function() {
         playlists.appendChild(them);
     })
 }()
+
+let addTracks = function() {
+    for (let i = 0; i < listOfTracks.length; i++){
+        let element = document.createElement('li')
+        element.innerHTML = i+1 + '. - ' + listOfTracks[i]
+        tracklist.appendChild(element)
+    }
+}()
