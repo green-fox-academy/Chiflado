@@ -20,7 +20,7 @@
         </div>
         <div id="volume_control">
             <img class="sound">
-            <input type="range" class="volume">
+            <input type="range" class="volume" min="0" max="100" step="1" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)">
         </div>
     </div>
     <script src="assets/app.js"></script>
