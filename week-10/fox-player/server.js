@@ -13,5 +13,9 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html')
 });
 
+app.get('/tracks', function(req, res){
+    res.sendFile(__dirname + '/assets/tracks.json')
+});
+
 app.listen(port);
 console.log('the server run at: http://localhost:'+port);
