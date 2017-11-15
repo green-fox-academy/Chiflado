@@ -13,4 +13,4 @@ function doRequest(callback){
 }
 
 doRequest(renderTracklist);
-doRequest(nextTrack);
+doRequest(switchTracks);

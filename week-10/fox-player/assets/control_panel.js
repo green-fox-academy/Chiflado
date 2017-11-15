@@ -109,3 +109,22 @@ function nextTrack(data){
         }
     }
 )}
+
+function prevTrack(data){
+    document.querySelector('.rewind').addEventListener('click', function(event){
+        for(let i = 0; i<data.length; i++){
+            if(music.src === 'http://localhost:8080/'+data[i].url){
+                music.src = data[i-1].url
+                return music.play();
+            }else if(music.src === data[0].url){
+                music.src = 'http://localhost:8080/'+data[data.length-1].url    
+                return music.play();
+            }
+        }
+    }
+)}
+
+function switchTracks(data){
+    nextTrack(data);
+    prevTrack(data);
+}
