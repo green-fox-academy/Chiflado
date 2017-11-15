@@ -52,10 +52,10 @@ music.addEventListener("canplaythrough", function() {
 });
 
 timeline.addEventListener("click", function(event) {
-        moveplayhead(event);
-        music.currentTime = duration * clickPercent(event);
-    });
-    
+    moveplayhead(event);
+    music.currentTime = duration * clickPercent(event);
+});
+
 playhead.addEventListener('mousedown', mouseDown);
 window.addEventListener('mouseup', mouseUp);
 
@@ -80,7 +80,7 @@ function mouseUp(event) {
 
 function moveplayhead(event) {
     let newMargLeft = event.clientX - getPosition(timeline);
-
+    
     if (newMargLeft >= 0 && newMargLeft <= timelineWidth) {
         playhead.style.marginLeft = newMargLeft + "px";
     }
@@ -131,11 +131,25 @@ function prevTrack(data){
 function playToClick(data){
     let tracks = document.querySelectorAll('.track');
     for(let i = 0; i < tracks.length; i++){
+        selectTrack(tracks[i], tracks);
         tracks[i].addEventListener('dblclick', function(event){
             music.src = data[i].url;
             renderCurrentTrack(data);
             return music.play()
         })
+    }
+}
+
+function selectTrack(select, tracks){
+    select.addEventListener('click', function(event){
+        clearSelect(tracks);
+        select.setAttribute("style", "background-color: #ABE7E5;");
+    });
+}
+
+function clearSelect(tracks){
+    for(let i = 0; i < tracks.length; i++){
+        tracks[i].removeAttribute("style");
     }
 }
 

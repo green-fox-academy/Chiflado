@@ -68,6 +68,7 @@ li{
   margin: 0;
 }
 
+
 #control_panel{
   display: flex;
   width: 100%;
@@ -85,7 +86,7 @@ li{
   justify-content: space-around;
   align-items: center;
 }
-   
+
 .play{
   background: url('play.svg'); 
 }
@@ -117,7 +118,7 @@ li{
   border: black 1px solid;
   position: relative;
 }
-  
+
 #playhead{
   width: 8px;
   height: 8px;
