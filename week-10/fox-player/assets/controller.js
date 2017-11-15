@@ -3,7 +3,6 @@
 const playlists = document.querySelector('.playlists')
 const tracklist = document.querySelector('.tracklist')
 const listOfPlaylists = ['All tracks', 'Favourites']
-const listOfTracks = ['Rancid - Maxwell Murder']
 
 console.log(listOfPlaylists);
 
@@ -19,6 +18,7 @@ let renderPlaylist = function() {
 function renderTracklist(data) {
     for (let i = 0; i < data.length; i++){
         let element = document.createElement('li')
+        element.className = 'track';
         element.innerHTML = i+1+ ' ' + data[i].artist +  ' - ' + data[i].title
         tracklist.appendChild(element)
         document.querySelector('audio').src = data[0].url;

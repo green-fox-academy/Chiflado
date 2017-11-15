@@ -128,8 +128,20 @@ function prevTrack(data){
     }
 )}
 
+function playToClick(data){
+    let tracks = document.querySelectorAll('.track');
+    for(let i = 0; i < tracks.length; i++){
+        tracks[i].addEventListener('dblclick', function(event){
+            music.src = data[i].url;
+            renderCurrentTrack(data);
+            return music.play()
+        })
+    }
+}
+
 function switchTracks(data){
     nextTrack(data, document.querySelector('.forward'), 'click');
     prevTrack(data);
     nextTrack(data, music, 'ended');
+    playToClick(data);
 }
