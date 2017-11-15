@@ -21,5 +21,6 @@ function renderTracklist(data) {
         let element = document.createElement('li')
         element.innerHTML = i+1+ ' ' + data[i].artist +  ' - ' + data[i].title
         tracklist.appendChild(element)
+        document.querySelector('audio').src = data[0].url;
     }
 }

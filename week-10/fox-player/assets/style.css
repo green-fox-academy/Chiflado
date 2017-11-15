@@ -53,7 +53,6 @@ li{
 .current_track{
   height: 50px;
   width: 100%;
-  background: lightgray;
 }
 
 .tracklist{
@@ -141,6 +140,6 @@ audio{
   display: none;
 }
 
-.tracklist:nth-child(odd){
+.tracklist li:nth-child(odd){
   background: lightgray;
 }

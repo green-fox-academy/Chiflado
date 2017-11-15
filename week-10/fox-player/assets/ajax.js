@@ -12,4 +12,5 @@ function doRequest(callback){
     xhr.send();
 }
 
-doRequest(renderTracklist); 
+doRequest(renderTracklist);
+doRequest(nextTrack);

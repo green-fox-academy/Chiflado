@@ -95,3 +95,17 @@ function moveplayhead(event) {
 function getPosition(el) {
     return el.getBoundingClientRect().left;
 }
+
+function nextTrack(data){
+    document.querySelector('.forward').addEventListener('click', function(event){
+        for(let i = 0; i<data.length; i++){
+            if(music.src === 'http://localhost:8080/'+data[i].url){
+                music.src = data[i+1].url
+                return music.play();
+            }else if(music.src === 'http://localhost:8080/'+data[data.length-1].url){
+                music.src = data[0].url
+                return music.play();
+            }
+        }
+    }
+)}
