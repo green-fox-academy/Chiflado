@@ -135,6 +135,7 @@ function playToClick(data){
         tracks[i].addEventListener('dblclick', function(event){
             music.src = data[i].url;
             renderCurrentTrack(data);
+            play.className = "pause button"
             return music.play()
         })
     }
