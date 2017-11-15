@@ -1,1 +1,4 @@
 music/*
+node_modules/*
+package.json
+
