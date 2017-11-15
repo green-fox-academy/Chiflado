@@ -24,3 +24,16 @@ function renderTracklist(data) {
         document.querySelector('audio').src = data[0].url;
     }
 }
+
+function renderCurrentTrack(data){
+    for (let i = 0; i < data.length; i++){
+        if(music.src === 'http://localhost:8080/'+data[i].url){
+            document.querySelector('.current_track').innerHTML = data[i].artist + ' - ' + data[i].title;
+        }
+    }
+}
+
+function renderTracklistElements(data){
+    renderTracklist(data);
+    renderCurrentTrack(data);
+}

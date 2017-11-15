@@ -101,9 +101,11 @@ function nextTrack(data, target, theEvent){
         for(let i = 0; i<data.length; i++){
             if(music.src === 'http://localhost:8080/'+data[i].url){
                 music.src = data[i+1].url
+                renderCurrentTrack(data);
                 return music.play();
             }else if(music.src === 'http://localhost:8080/'+data[data.length-1].url){
                 music.src = data[0].url
+                renderCurrentTrack(data);
                 return music.play();
             }
         }
@@ -113,19 +115,18 @@ function nextTrack(data, target, theEvent){
 function prevTrack(data){
     document.querySelector('.rewind').addEventListener('click', function(event){
         for(let i = 0; i<data.length; i++){
-            if(music.src === 'http://localhost:8080/'+data[i].url){
-                music.src = data[i-1].url
+            if(music.src === 'http://localhost:8080/'+data[0].url){
+                music.src = data[data.length-1].url
+                renderCurrentTrack(data);    
                 return music.play();
-            }else if(music.src === data[0].url){
-                music.src = 'http://localhost:8080/'+data[data.length-1].url    
+            }else if(music.src === 'http://localhost:8080/'+data[i].url){
+                music.src = data[i-1].url
+                renderCurrentTrack(data);
                 return music.play();
             }
         }
     }
 )}
-
-
-
 
 function switchTracks(data){
     nextTrack(data, document.querySelector('.forward'), 'click');
