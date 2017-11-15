@@ -96,8 +96,8 @@ function getPosition(el) {
     return el.getBoundingClientRect().left;
 }
 
-function nextTrack(data){
-    document.querySelector('.forward').addEventListener('click', function(event){
+function nextTrack(data, target, theEvent){
+    target.addEventListener(theEvent, function(event){
         for(let i = 0; i<data.length; i++){
             if(music.src === 'http://localhost:8080/'+data[i].url){
                 music.src = data[i+1].url
@@ -124,7 +124,11 @@ function prevTrack(data){
     }
 )}
 
+
+
+
 function switchTracks(data){
-    nextTrack(data);
+    nextTrack(data, document.querySelector('.forward'), 'click');
     prevTrack(data);
+    nextTrack(data, music, 'ended');
 }
