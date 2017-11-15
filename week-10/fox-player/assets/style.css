@@ -68,6 +68,9 @@ li{
   margin: 0;
 }
 
+.track{
+  cursor: pointer;
+}
 
 #control_panel{
   display: flex;
@@ -152,6 +155,7 @@ audio{
 .tracklist li:nth-child(odd){
   background: lightgray;
 }
+
 
 .playlists li:nth-child(odd){
   background: lightgray;
