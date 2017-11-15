@@ -16,10 +16,10 @@ let renderPlaylist = function() {
     })
 }()
 
-let renderTracks = function() {
-    for (let i = 0; i < listOfTracks.length; i++){
+function renderTracklist(data) {
+    for (let i = 0; i < data.length; i++){
         let element = document.createElement('li')
-        element.innerHTML = i+1 + '. - ' + listOfTracks[i]
+        element.innerHTML = i+1+ ' ' + data[i].artist +  ' - ' + data[i].title
         tracklist.appendChild(element)
     }
-}()
+}
