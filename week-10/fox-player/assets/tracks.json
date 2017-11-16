@@ -1,30 +1,36 @@
 [
-    {"artist" : "Rancid",
+    {"trackID" : 1,
+     "artist" : "Rancid",
      "title" : "Maxwell Murder",
      "url" : "music/Maxwell_Murder.mp3"
     },
 
-    {"artist" : "Bad Religion",
+    {"trackID" : 2,
+     "artist" : "Bad Religion",
      "title" : "American Jesus",
      "url" : "music/American_Jesus.mp3"
        },
    
-    {"artist" : "Misfits",
+    {"trackID" : 3,
+     "artist" : "Misfits",
      "title" : "Dig Up Her Bones",
      "url" : "music/Dig_Up_Her_Bones.mp3"
     },
 
-    {"artist" : "The Cure",
+    {"trackID" : 4,
+     "artist" : "The Cure",
      "title" : "Friday I'm in Love",
      "url" : "music/Friday_I'm_In_Love.mp3"
     },
     
-    {"artist" : "Pat Benatar",
+    {"trackID" : 5,
+     "artist" : "Pat Benatar",
      "title" : "Heartbreaker",
      "url" : "music/Heartbreaker.mp3"
     },
     
-    {"artist" : "Dead Kennedys",
+    {"trackID" : 6,
+     "artist" : "Dead Kennedys",
      "title" : "Too Drunk to Fuck",
      "url" : "music/Too_Drunk_to_Fuck.mp3"
     }  

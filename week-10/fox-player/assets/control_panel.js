@@ -96,45 +96,45 @@ function getPosition(el) {
     return el.getBoundingClientRect().left;
 }
 
-function nextTrack(data, target, theEvent){
+function nextTrack(object, target, theEvent){
     target.addEventListener(theEvent, function(event){
-        for(let i = 0; i<data.length; i++){
-            if(music.src === 'http://localhost:8080/'+data[i].url){
-                music.src = data[i+1].url
-                renderCurrentTrack(data);
+        for(let i = 0; i<object.data.length; i++){
+            if(music.src === 'http://localhost:8080/'+object.data[i].url){
+                music.src = object.data[i+1].url
+                renderCurrentTrack(object);
                 return music.play();
-            }else if(music.src === 'http://localhost:8080/'+data[data.length-1].url){
-                music.src = data[0].url
-                renderCurrentTrack(data);
+            }else if(music.src === 'http://localhost:8080/'+object.data[object.data.length-1].url){
+                music.src = object.data[0].url
+                renderCurrentTrack(object);
                 return music.play();
             }
         }
     }
 )}
 
-function prevTrack(data){
+function prevTrack(object){
     document.querySelector('.rewind').addEventListener('click', function(event){
-        for(let i = 0; i<data.length; i++){
-            if(music.src === 'http://localhost:8080/'+data[0].url){
-                music.src = data[data.length-1].url
-                renderCurrentTrack(data);    
+        for(let i = 0; i<object.data.length; i++){
+            if(music.src === 'http://localhost:8080/'+object.data[0].url){
+                music.src = object.data[object.data.length-1].url
+                renderCurrentTrack(object);    
                 return music.play();
-            }else if(music.src === 'http://localhost:8080/'+data[i].url){
-                music.src = data[i-1].url
-                renderCurrentTrack(data);
+            }else if(music.src === 'http://localhost:8080/'+object.data[i].url){
+                music.src = object.data[i-1].url
+                renderCurrentTrack(object);
                 return music.play();
             }
         }
     }
 )}
 
-function playToClick(data){
+function playToClick(object){
     let tracks = document.querySelectorAll('.track');
     for(let i = 0; i < tracks.length; i++){
         selectTrack(tracks[i], tracks);
         tracks[i].addEventListener('dblclick', function(event){
-            music.src = data[i].url;
-            renderCurrentTrack(data);
+            music.src = object.data[i].url;
+            renderCurrentTrack(object);
             play.className = "pause button"
             return music.play()
         })
@@ -154,9 +154,9 @@ function clearSelect(tracks){
     }
 }
 
-function switchTracks(data){
-    nextTrack(data, document.querySelector('.forward'), 'click');
-    prevTrack(data);
-    nextTrack(data, music, 'ended');
-    playToClick(data);
+function switchTracks(object){
+    nextTrack(object, document.querySelector('.forward'), 'click');
+    prevTrack(object);
+    nextTrack(object, music, 'ended');
+    playToClick(object);
 }

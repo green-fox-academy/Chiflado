@@ -17,5 +17,10 @@ app.get('/tracks', function(req, res){
     res.sendFile(__dirname + '/assets/tracks.json')
 });
 
+app.get('/playlists', function(req, res){
+    res.sendFile(__dirname + '/assets/playlists.json')
+});
+
+
 app.listen(port);
 console.log('the server run at: http://localhost:'+port);
