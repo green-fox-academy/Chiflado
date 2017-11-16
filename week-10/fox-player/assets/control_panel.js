@@ -160,3 +160,12 @@ function switchTracks(object){
     nextTrack(object, music, 'ended');
     playToClick(object);
 }
+
+let trackSwitchConfig = {
+    url: '/tracks',
+    method: 'GET',
+    callback: switchTracks,
+    data: null
+}
+
+doRequest(trackSwitchConfig);

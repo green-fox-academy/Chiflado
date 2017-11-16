@@ -34,3 +34,20 @@ function renderTracklistElements(object){
     renderTracklist(object);
     renderCurrentTrack(object);
 }
+let playlistConfig = {
+    url: '/playlists',
+    method: 'GET',
+    callback: renderPlaylist,
+    data: null
+}
+
+    
+let tracklistConfig = {
+    url: '/tracks',
+    method: 'GET',
+    callback: renderTracklistElements,
+    data: null
+}
+
+doRequest(playlistConfig);
+doRequest(tracklistConfig);
