@@ -102,10 +102,12 @@ function nextTrack(object, target, theEvent){
             if(music.src === 'http://localhost:8080/'+object.data[i].url){
                 music.src = object.data[i+1].url
                 renderCurrentTrack(object);
+                play.className = "pause button"
                 return music.play();
             }else if(music.src === 'http://localhost:8080/'+object.data[object.data.length-1].url){
                 music.src = object.data[0].url
                 renderCurrentTrack(object);
+                play.className = "pause button"
                 return music.play();
             }
         }
@@ -117,11 +119,13 @@ function prevTrack(object){
         for(let i = 0; i<object.data.length; i++){
             if(music.src === 'http://localhost:8080/'+object.data[0].url){
                 music.src = object.data[object.data.length-1].url
-                renderCurrentTrack(object);    
+                renderCurrentTrack(object);
+                play.className = "pause button"    
                 return music.play();
             }else if(music.src === 'http://localhost:8080/'+object.data[i].url){
                 music.src = object.data[i-1].url
                 renderCurrentTrack(object);
+                play.className = "pause button"
                 return music.play();
             }
         }
