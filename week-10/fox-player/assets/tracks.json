@@ -20,7 +20,7 @@
     {"trackID" : 4,
      "artist" : "The Cure",
      "title" : "Friday I'm in Love",
-     "url" : "music/Friday_I'm_In_Love.mp3"
+     "url" : "music/Friday_Im_In_Love.mp3"
     },
     
     {"trackID" : 5,
@@ -33,5 +33,11 @@
      "artist" : "Dead Kennedys",
      "title" : "Too Drunk to Fuck",
      "url" : "music/Too_Drunk_to_Fuck.mp3"
+    }, 
+
+    {"trackID" : 7,
+     "artist" : "KIES",
+     "title" : "Szelid",
+     "url" : "music/kies_szelid.mp3"
     }  
 ]

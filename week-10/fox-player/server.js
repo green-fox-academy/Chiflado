@@ -1,26 +1,52 @@
 'use strict';
 
-const express = require('express');
-const app = express();
+var express = require('express');
+var mysql = require('mysql');
+var app = express();
+var connection = mysql.createConnection({
+    host: "localhost",
+    user: "'root'",
+    password: "root",
+    database: "fox_player"
+});
 
-const port = 8080;
+const port = 8080; 
 
-app.use(express.json());
 app.use('/assets', express.static('./assets'));
 app.use('/music', express.static('./music'));
+app.use(express.json());
 
-app.get('/', function(req, res){
-    res.sendFile(__dirname + '/index.html')
+
+
+app.get('/', function(req, res) {
+    res.sendFile(__dirname + '/index.html');    
 });
 
-app.get('/tracks', function(req, res){
-    res.sendFile(__dirname + '/assets/tracks.json')
+app.get('/tracks', function(req, res) {
+    connection.query('SELECT * FROM tracks;', function(error, result){
+        if(error) {
+            console.log(error.toString());
+        }
+        res.json(result);
+        });
 });
 
-app.get('/playlists', function(req, res){
-    res.sendFile(__dirname + '/assets/playlists.json')
+app.get('/playlists', function(req, res) {
+    connection.query('SELECT * FROM playlists;', function(error, result){
+        if(error) {
+            console.log(error.toString());
+        }
+        res.json(result);
+        });
 });
 
-
+connection.connect(function(err){
+    if(err){
+      console.log("Error connecting to Db");
+      return;
+    }
+    console.log("Connection established");
+  });
+  
 app.listen(port);
-console.log('the server run at: http://localhost:'+port);
+console.log('The server is running at http://localhost:'+port+'/');

@@ -7,7 +7,7 @@ function renderPlaylist(object) {
     for (let i = 0; i < object.data.length; i++){
         let element = document.createElement('li')
         element.className = 'playlist';
-        element.innerHTML = object.data[i].title;
+        element.innerHTML = object.data[i].name;
         playlists.appendChild(element);
     }
 }
