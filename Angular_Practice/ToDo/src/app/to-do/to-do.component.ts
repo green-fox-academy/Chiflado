@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Todo } from '../todo';
 import { TODOS } from '../mocked';
 
 @Component({
@@ -11,9 +12,15 @@ export class ToDoComponent implements OnInit {
 
   todos = TODOS;
 
+  selectedTodo: Todo;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelect(todo: Todo): void{
+    this.selectedTodo = todo;
   }
 
 }

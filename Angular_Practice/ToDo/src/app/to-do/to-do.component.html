@@ -1,5 +1,18 @@
-<div>
-  <label>task:
-    <input [(ngModel)]="todo.task" placeholder="task">
-  </label>
-</div>
+<h2>My todos</h2>
+<ul class="todos">
+  <li *ngFor="let todo of todos" 
+      [class.selected]="todo === selectedTodo"
+      (click)="onSelect(todo)">
+    <span class="badge">{{todo.id}}</span> {{todo.task}}
+  </li>
+</ul>
+
+<div *ngIf="selectedTodo">
+  
+   <div>
+     <label>task:
+       <input [(ngModel)]="selectedTodo.task" placeholder="task">
+     </label>
+   </div>
+  
+ </div>
