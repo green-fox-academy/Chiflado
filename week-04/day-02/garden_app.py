@@ -38,7 +38,7 @@ class Flower(object):
             return 'doesn\'t needs water'
 
     def watered(self, amount):
-        self.water_amount += amount * 0.4
+        self.water_amount += amount * 0.75
 
     def __str__(self):
         return "The {} Flower {}".format(self.name, self.need_water())
@@ -53,7 +53,7 @@ class Tree(Flower):
             return 'doesn\'t needs water'
 
     def watered(self, amount):
-        self.water_amount += amount * 0.75
+        self.water_amount += amount * 0.4
 
     def __str__(self):
         return "The {} Tree {}".format(self.name, self.need_water())

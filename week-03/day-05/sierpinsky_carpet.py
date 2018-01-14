@@ -9,7 +9,7 @@ canvas = Canvas(root, width=canvas_width, height=canvas_height)
 canvas.pack()
 
 def draw_rectangle(x, y, size):
-    time.sleep(0.01)
+    time.sleep(0.0001)
     canvas.update()
     canvas.create_rectangle(x + size / 3, y + size / 3, x + size / 3 * 2, y + size / 3 * 2, fill = 'black')
 

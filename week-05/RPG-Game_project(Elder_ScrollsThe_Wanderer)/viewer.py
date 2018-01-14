@@ -42,8 +42,7 @@ class Viewer:
         for entity in enemy_list:
             x = entity.coord_x * self.field_size + 36
             y = entity.coord_y * self.field_size + 36
-            if entity == Boss(entity.coord_x, entity.coord_y, level = 1, max_hp = 2):
-                entity.entity = self.canvas.create_image(x, y, image = self.skeleton_pic)
+            entity.entity = self.canvas.create_image(x, y, image = self.skeleton_pic)
 
     def draw_hero(self, image, x, y):
         x = self.field_size / 2

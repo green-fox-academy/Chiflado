@@ -40,6 +40,15 @@ app.get('/playlists', function(req, res) {
         });
 });
 
+app.post('/playlists', function(req, res){
+    connection.query('INSERT INTO playlists (name, system)  VALUES("' + req.body.name +'", 0);', function(error, result) {
+        if(error) {
+            console.log(error.toString());
+        }
+        res.json({'Result': 'success'});
+        });
+    });
+    
 connection.connect(function(err){
     if(err){
       console.log("Error connecting to Db");

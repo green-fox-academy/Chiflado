@@ -5,4 +5,4 @@ class Interactions:
         pass
 
     def get_coords(self, character):
-        
+        pass

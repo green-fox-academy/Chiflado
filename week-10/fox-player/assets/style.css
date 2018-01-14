@@ -31,20 +31,24 @@
 .playlistContainer{
   width: 400;
   height: 350px;
-  display: flex;
+  width: 400px;
   grid-area: playlists;
+}
+
+.playlistHeader{
+  font-size: 26px;
+  height: 30px;
+  display: flex;
 }
 
 .add{
   width: 20px;
   height: 20px;
   background: url("add.svg");
-  margin-left: 200px;
+  margin: 5px 0 0 200px;
 }
 
 .playlists{
-  font-size: 26px;
-  width: 400px;
   padding-left: 0;
 }
 

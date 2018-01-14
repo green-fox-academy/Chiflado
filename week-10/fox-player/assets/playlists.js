@@ -24,4 +24,22 @@ function addPlaylistDialog(){
     });
 };
 
+function pass(){};
+
+let createConfig = {
+    url: '/playlists',
+    method: 'POST',
+    callback: pass,
+    data: null
+}
+
+    let create = function(playlistName) {
+        let playlist = document.querySelector('.playlists')
+        playlist.innerHTML = '';
+        createConfig.data = {"name": playlistName};
+        console.log(createConfig.data);
+        doRequest(createConfig);
+        doRequest(playlistConfig);
+    };
+
 addPlaylistDialog();

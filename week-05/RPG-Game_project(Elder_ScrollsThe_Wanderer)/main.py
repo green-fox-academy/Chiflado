@@ -36,6 +36,6 @@ class Game:
 
 
     def __str__(self):
-        return (str(self.enemy_list))
+        return str(list(map(str,self.enemy_list)))
 
 game = Game(3)

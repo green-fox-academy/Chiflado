@@ -5,9 +5,9 @@ girls = ["Eve", "Ashley", "Bözsi", "Kat", "Jane"]
 boys = ["Joe", "Fred", "Béla", "Todd", "Neef", "Jeff"]
 
 def matchmaking(x, y):
-    order = boys
+    order = y
     a = 0
-    for i in (girls):
+    for i in (x):
         order.insert(a, i)
         a += 2
     return (order)

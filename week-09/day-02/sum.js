@@ -8,5 +8,4 @@ function sum(list){
     return sumNumbers;
 }
 
-
 module.exports = sum;

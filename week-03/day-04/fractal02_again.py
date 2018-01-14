@@ -18,7 +18,7 @@ def draw_hexagon(x, y, size):
     
 
 def draw_freakin_fractal(x, y, size):
-    if size < 5:
+    if size < 1:
         return
     else:
         hex_height = 3 ** 0.5 / 2 * size

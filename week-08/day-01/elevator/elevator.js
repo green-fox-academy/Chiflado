@@ -5,7 +5,7 @@ let downButton = document.querySelector('.down')
 let addButton = document.querySelector('.add');
 let removeButton = document.querySelector('.remove');
 
-class SwitchLevels{
+class Elevator{
     constructor(){
         this.level = 0;
         this.people = 0;
@@ -58,7 +58,7 @@ class SwitchLevels{
     }
 }
 
-let elevator = new SwitchLevels;
+let elevator = new Elevator;
 let goingUp = elevator.increaseLevel.bind(elevator);
 let goingDown = elevator.decreaseLevel.bind(elevator);
 let addPassengers = elevator.addPeople.bind(elevator);

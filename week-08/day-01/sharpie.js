@@ -11,7 +11,7 @@ class Sharpie{
     }
 }
 
-let redSharpie = new Sharpie('red', 3);
+let redSharpie = new Sharpie('red', 23);
 
 while (redSharpie.inkAmount > 0){
     redSharpie.use();

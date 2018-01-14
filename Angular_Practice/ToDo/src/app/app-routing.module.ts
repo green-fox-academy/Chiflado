@@ -4,12 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { ToDoComponent } from './to-do/to-do.component';
 
 const routes: Routes = [
-  {path: 'todos', component: ToDoComponent}
+  {path: '', component: ToDoComponent}
 ]
 
 @NgModule({
   imports: [
-    RouterModule
+    RouterModule.forRoot(routes)
   ],
   declarations: []
 })

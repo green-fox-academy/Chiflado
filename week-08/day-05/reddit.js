@@ -28,17 +28,17 @@ function doRequest(callback) {
     x.send();
   }
 
-  function renderPosts(data){
-      for(let i = 0; i < data.posts.length; i++){
-          let postDom = createPost(data.posts[i]);
-          let upvote = postDom.querySelector('.upvote')
-          console.log(upvote);          
-      }
-  }
+function renderPosts(data){
+    for(let i = 0; i < data.posts.length; i++){
+        let postDom = createPost(data.posts[i]);
+        let upvote = postDom.querySelector('.upvote')
+        console.log(upvote);          
+    }
+}
 
-  function handleData(data){
+function handleData(data){
     console.log(data);
-  }
+}
 
 doRequest(handleData);
 doRequest(renderPosts);

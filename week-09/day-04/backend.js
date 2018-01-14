@@ -23,7 +23,6 @@ app.get('/', function(req, res){
 
 app.get('/book_titles', function(req, res){
     connection.query('SELECT book_name FROM book_mast;', function(err, data){
-        console.log(data);
         res.json(data);
     });
 });
@@ -37,7 +36,6 @@ app.get('/book_infos', function(req, res){
                     ON book_mast.cate_id = category.cate_id
                     LEFT JOIN publisher
                     ON book_mast.pub_id = publisher.pub_id;`, function(err, data){
-                        console.log(data);
                         res.json(data);
                     })
 })
